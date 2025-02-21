@@ -1,6 +1,5 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import { useState } from "react";
 import Image from "next/image";
 import Countdown from 'react-countdown';
@@ -56,7 +55,8 @@ function Mobile({
     finishTime: Date | number | string
 }) {
     const [isFinished, setIsFinished] = useState<boolean>(false);
-
+    console.log(isFinished);
+    
     const renderer = ({
         days,
         hours,
@@ -110,6 +110,8 @@ function PC({
     finishTime: Date | number | string
 }) {
     const [isFinished, setIsFinished] = useState<boolean>(false);
+    console.log(isFinished);
+    
 
     const renderer = ({
         days,

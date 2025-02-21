@@ -5,15 +5,14 @@ import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { IoCopyOutline } from "react-icons/io5";
-import { toast } from "sonner"
-import { ToastWithTitle } from "./ui/toast-with-title";
+import { toast } from "sonner";
 
 export function CopyButton({ className, text, copyText }: { className?: string, text?: string, copyText?: string }) {
     const [buttonText, setButtonText] = useState(text);
     const [isCopied, setIsCopied] = useState(false);
 
     useEffect(() => {
-        let timer: any;
+        let timer: NodeJS.Timeout | string | number | undefined;
         if (isCopied) {
             timer = setTimeout(() => {
                 setButtonText(text);

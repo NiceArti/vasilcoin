@@ -46,7 +46,7 @@ export function Footer() {
 }
 
 
-function SocialButton({icon}:{icon: any}) {
+function SocialButton({icon}:{icon: React.JSX.Element}) {
     return (
         <Link href="#" className="size-11 bg-white border border-black rounded-full text-black inline-flex items-center justify-center shadow-[2px_2px_0px_black] hover:bg-slate-300">
             {icon}

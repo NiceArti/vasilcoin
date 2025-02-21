@@ -2,8 +2,6 @@
 
 
 import Image from "next/image";
-import React, { useState } from "react";
-import Marquee from 'react-fast-marquee';
 
 import { Button } from "./ui/button";
 import { CopyButton } from "./copy-button";
@@ -16,7 +14,7 @@ import VasilcoinText from '@/public/vasilcoin-text.png';
 import DogAsset from '@/public/dog.png';
 
 
-export function HeroSection({ className }: { className?: string }) {
+export function HeroSection() {
     return (
         <div className="w-full flex justify-center mt-16">
             <section className="mt-24 px-4 w-full max-w-[1745px] relative m-auto inline-flex">

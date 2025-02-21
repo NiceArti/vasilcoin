@@ -139,7 +139,7 @@ const StylizedDonutChart = () => {
                 viewBox="0 0 300 300"
             >
                 {/* Сегменты */}
-                {segments.map((segment, i) => (
+                {segments.map(segment => (
                     <g key={segment.id}>
                         <path
                             d={segment.path}
@@ -247,101 +247,101 @@ function lightenHexColor(hex: string, percent: number): string {
     return newHex;
 }
 
-const TubeDonutChart = () => {
-    const [hoverSegment, setHoverSegment] = useState<number | null>(null);
+// const TubeDonutChart = () => {
+//     const [hoverSegment, setHoverSegment] = useState<number | null>(null);
 
-    const data = [
-        { id: 1, value: 20, color: "#EA2A7B", label: "Ликвидность" },
-        { id: 2, value: 15, color: "#19E54C", label: "Награды" },
-        { id: 3, value: 10, color: "#ED8D18", label: "Фонд Помощи" },
-        { id: 4, value: 25, color: "#EBC822", label: "Наша экосистема" },
-        { id: 5, value: 20, color: "#AEE02C", label: "Маркетинг" },
-        { id: 6, value: 10, color: "#2580D1", label: "Разарв лучей" },
-    ];
+//     const data = [
+//         { id: 1, value: 20, color: "#EA2A7B", label: "Ликвидность" },
+//         { id: 2, value: 15, color: "#19E54C", label: "Награды" },
+//         { id: 3, value: 10, color: "#ED8D18", label: "Фонд Помощи" },
+//         { id: 4, value: 25, color: "#EBC822", label: "Наша экосистема" },
+//         { id: 5, value: 20, color: "#AEE02C", label: "Маркетинг" },
+//         { id: 6, value: 10, color: "#2580D1", label: "Разарв лучей" },
+//     ];
 
-    const total = data.reduce((acc, item) => acc + item.value, 0);
-    const centerX = 150;
-    const centerY = 150;
-    const radius = 100;
-    const innerRadius = 60;
-    const gapAngle = 0.08;
-    const cornerRadius = 10;
+//     const total = data.reduce((acc, item) => acc + item.value, 0);
+//     const centerX = 150;
+//     const centerY = 150;
+//     const radius = 100;
+//     const innerRadius = 60;
+//     const gapAngle = 0.08;
+//     const cornerRadius = 10;
 
-    let currentAngle = -Math.PI / 2;
-    const segments = data.map((item) => {
-        const angle = (item.value / total) * (2 * Math.PI - data.length * gapAngle);
-        const startAngle = currentAngle + gapAngle / 2;
-        const endAngle = startAngle + angle - gapAngle;
+//     let currentAngle = -Math.PI / 2;
+//     const segments = data.map((item) => {
+//         const angle = (item.value / total) * (2 * Math.PI - data.length * gapAngle);
+//         const startAngle = currentAngle + gapAngle / 2;
+//         const endAngle = startAngle + angle - gapAngle;
 
-        const outerStart = {
-            x: centerX + Math.cos(startAngle) * radius,
-            y: centerY + Math.sin(startAngle) * radius,
-        };
-        const outerEnd = {
-            x: centerX + Math.cos(endAngle) * radius,
-            y: centerY + Math.sin(endAngle) * radius,
-        };
+//         const outerStart = {
+//             x: centerX + Math.cos(startAngle) * radius,
+//             y: centerY + Math.sin(startAngle) * radius,
+//         };
+//         const outerEnd = {
+//             x: centerX + Math.cos(endAngle) * radius,
+//             y: centerY + Math.sin(endAngle) * radius,
+//         };
 
-        const innerStart = {
-            x: centerX + Math.cos(startAngle) * innerRadius,
-            y: centerY + Math.sin(startAngle) * innerRadius,
-        };
-        const innerEnd = {
-            x: centerX + Math.cos(endAngle) * innerRadius,
-            y: centerY + Math.sin(endAngle) * innerRadius,
-        };
+//         const innerStart = {
+//             x: centerX + Math.cos(startAngle) * innerRadius,
+//             y: centerY + Math.sin(startAngle) * innerRadius,
+//         };
+//         const innerEnd = {
+//             x: centerX + Math.cos(endAngle) * innerRadius,
+//             y: centerY + Math.sin(endAngle) * innerRadius,
+//         };
 
-        const largeArcFlag = angle > Math.PI ? 1 : 0;
+//         const largeArcFlag = angle > Math.PI ? 1 : 0;
 
-        const path = [
-            `M ${outerStart.x} ${outerStart.y}`,
-            `A ${cornerRadius} ${cornerRadius} 0 0 1 ${centerX + Math.cos(startAngle + 0.1) * (radius - cornerRadius)
-            } ${centerY + Math.sin(startAngle + 0.1) * (radius - cornerRadius)}`,
-            `A ${radius} ${radius} 0 ${largeArcFlag} 1 ${centerX + Math.cos(endAngle - 0.1) * (radius - cornerRadius)
-            } ${centerY + Math.sin(endAngle - 0.1) * (radius - cornerRadius)}`,
-            `A ${cornerRadius} ${cornerRadius} 0 0 1 ${outerEnd.x} ${outerEnd.y}`,
-            `L ${innerEnd.x} ${innerEnd.y}`,
-            `A ${cornerRadius} ${cornerRadius} 0 0 1 ${centerX + Math.cos(endAngle - 0.1) * (innerRadius + cornerRadius)
-            } ${centerY + Math.sin(endAngle - 0.1) * (innerRadius + cornerRadius)}`,
-            `A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${centerX + Math.cos(startAngle + 0.1) * (innerRadius + cornerRadius)
-            } ${centerY + Math.sin(startAngle + 0.1) * (innerRadius + cornerRadius)}`,
-            `A ${cornerRadius} ${cornerRadius} 0 0 1 ${innerStart.x} ${innerStart.y}`,
-            `Z`,
-        ].join(" ");
+//         const path = [
+//             `M ${outerStart.x} ${outerStart.y}`,
+//             `A ${cornerRadius} ${cornerRadius} 0 0 1 ${centerX + Math.cos(startAngle + 0.1) * (radius - cornerRadius)
+//             } ${centerY + Math.sin(startAngle + 0.1) * (radius - cornerRadius)}`,
+//             `A ${radius} ${radius} 0 ${largeArcFlag} 1 ${centerX + Math.cos(endAngle - 0.1) * (radius - cornerRadius)
+//             } ${centerY + Math.sin(endAngle - 0.1) * (radius - cornerRadius)}`,
+//             `A ${cornerRadius} ${cornerRadius} 0 0 1 ${outerEnd.x} ${outerEnd.y}`,
+//             `L ${innerEnd.x} ${innerEnd.y}`,
+//             `A ${cornerRadius} ${cornerRadius} 0 0 1 ${centerX + Math.cos(endAngle - 0.1) * (innerRadius + cornerRadius)
+//             } ${centerY + Math.sin(endAngle - 0.1) * (innerRadius + cornerRadius)}`,
+//             `A ${innerRadius} ${innerRadius} 0 ${largeArcFlag} 0 ${centerX + Math.cos(startAngle + 0.1) * (innerRadius + cornerRadius)
+//             } ${centerY + Math.sin(startAngle + 0.1) * (innerRadius + cornerRadius)}`,
+//             `A ${cornerRadius} ${cornerRadius} 0 0 1 ${innerStart.x} ${innerStart.y}`,
+//             `Z`,
+//         ].join(" ");
 
-        currentAngle = endAngle + gapAngle;
+//         currentAngle = endAngle + gapAngle;
 
-        return {
-            ...item,
-            path,
-        };
-    });
+//         return {
+//             ...item,
+//             path,
+//         };
+//     });
 
-    return (
-        <div className="relative w-full max-w-md">
-            <svg width="300" height="300" viewBox="0 0 300 300">
-                {segments.map((segment) => (
-                    <path
-                        key={segment.id}
-                        d={segment.path}
-                        fill={segment.color}
-                        stroke="#000"
-                        strokeWidth="2"
-                        className="cursor-pointer transition-all duration-200"
-                        style={{
-                            transform:
-                                hoverSegment === segment.id ? "scale(1.05)" : "scale(1)",
-                            transformOrigin: `${centerX}px ${centerY}px`,
-                            filter: "drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.2))",
-                        }}
-                        onMouseEnter={() => setHoverSegment(segment.id)}
-                        onMouseLeave={() => setHoverSegment(null)}
-                    />
-                ))}
-            </svg>
-        </div>
-    );
-};
+//     return (
+//         <div className="relative w-full max-w-md">
+//             <svg width="300" height="300" viewBox="0 0 300 300">
+//                 {segments.map((segment) => (
+//                     <path
+//                         key={segment.id}
+//                         d={segment.path}
+//                         fill={segment.color}
+//                         stroke="#000"
+//                         strokeWidth="2"
+//                         className="cursor-pointer transition-all duration-200"
+//                         style={{
+//                             transform:
+//                                 hoverSegment === segment.id ? "scale(1.05)" : "scale(1)",
+//                             transformOrigin: `${centerX}px ${centerY}px`,
+//                             filter: "drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.2))",
+//                         }}
+//                         onMouseEnter={() => setHoverSegment(segment.id)}
+//                         onMouseLeave={() => setHoverSegment(null)}
+//                     />
+//                 ))}
+//             </svg>
+//         </div>
+//     );
+// };
 
 const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) => {
     return (
@@ -352,7 +352,7 @@ const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) 
         >
             <foreignObject x="-105.45" y="-105.389" width="329.841" height="250.861">
                 <div
-                    xmlns="http://www.w3.org/1999/xhtml"
+                    
                     style={{
                         backdropFilter: 'blur(53.08px)',
                         clipPath: `url(#bgblur_0_8_12964_clip_path)`,
