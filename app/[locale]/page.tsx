@@ -17,7 +17,6 @@ import { IoIosInformationCircle, IoMdCloseCircle } from "react-icons/io";
 export default function Home() {
 	return (
 		<div className="xl:overflow-x-clip">
-			<Header />
 			<HeroSection />
 			<Marquee
 				className="w-full h-full mt-10 md:mt-16 pointer-events-none bg-[#FFB5C0] md:py-8 py-4 border-y-4 border-black"

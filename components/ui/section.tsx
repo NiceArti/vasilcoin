@@ -3,15 +3,15 @@ import { cn } from "@/lib/utils";
 
 export const Section = React.forwardRef<
     HTMLDivElement,
-    React.ComponentPropsWithoutRef<"section">
->(({ className, children, ...props }, ref) => {
+    React.ComponentPropsWithoutRef<"section"> & {classNameInner?: string}
+>(({ className, classNameInner, children, ...props }, ref) => {
     return (
         <section
             ref={ref}
             className={cn("w-full border-b-2 border-black sm:border-b-4", className)}
             {...props}
         >
-            <div className="relative mx-auto max-w-6xl px-4 overflow-clip lg:overflow-visible">
+            <div className={cn("relative mx-auto max-w-7xl px-4 overflow-x-clip lg:overflow-x-visible", classNameInner)}>
                 {children}
             </div>
         </section>

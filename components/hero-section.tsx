@@ -13,40 +13,47 @@ import CloudGroup from '@/public/clouds-group.png';
 import VasilcoinText from '@/public/vasilcoin-text.png';
 import DogAsset from '@/public/dog.png';
 import { BBCodeRenderer } from "@/components/ui/code-renderer";
+import { Section } from "./ui/section";
+import { Header } from "./header";
 
 
 export function HeroSection() {
+    const address = 'EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf';
     const t = useTranslations('HeroSection');
 
     return (
-        <div className="w-full flex justify-center mt-16">
-            <section className="mt-24 px-4 w-full max-w-[1745px] relative m-auto inline-flex">
-                <div className="flex flex-col gap-3 w-full">
-                    <Image className="hidden md:block" {...CloudGroup} alt="Funny clouds" quality={100}/>
-                    <Image {...VasilcoinText}  className="mx-auto h-[60px] w-[288px] md:mx-0 md:w-auto md:h-auto max-h-28 max-w-[520px]" alt="VASILCOIN" quality={100}/>
-                    <div className="hidden md:flex flex-col gap-4">
-                        <p className="font-semibold text-3xl lg:text-5xl leading-[52px]">
-                            <BBCodeRenderer text={t('description')} />
-                        </p>
-                    </div>
+        <Section
+            className="border-b-0 sm:border-b-0"
+            classNameInner="flex flex-col gap-3"
+        >
+            <Header className="mt-8 mb-6" />
+            
+            <Image className="hidden md:block" {...CloudGroup} alt="Funny clouds" quality={100} />
+            <Image {...VasilcoinText} className="mx-auto h-[60px] w-[288px] md:mx-0 md:w-auto md:h-auto max-h-28 max-w-[520px]" alt="VASILCOIN" quality={100} />
+            <div className="hidden md:flex flex-col gap-4">
+                <p className="font-semibold text-3xl lg:text-5xl leading-[52px]">
+                    <BBCodeRenderer text={t('description')} />
+                </p>
+            </div>
 
-                    <Button
-                        className={"mx-auto mt-44 md:mx-0 md:mt-12 w-max h-[72px] px-12 rounded-full bg-[#FBAC01] border border-black shadow-[3px_3px_0px_black] hover:bg-[#fb8f01] font-bold text-[22px] text-black"}
-                    >
-                        {t('join-community')}
-                    </Button>
-
-
-                    <div className="hidden md:inline-flex mt-12 w-max bg-white rounded-full border-2 border-black pl-8  py-2 pr-2 gap-3 shadow-[3px_3px_0px_black] items-center">
-                        <span className="text-[18px] font-semibold">EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf</span>
-                        <CopyButton text={t('copy')} copyText="EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf"/>
-                    </div>
+            <Button
+                variant={'outline'}
+                className="mx-auto w-[90%] py-7 text-[22px] mt-44 md:mt-12 md:mx-0 md:w-max md:py-8 md:px-10 lg:py-10 lg:text-[28px]"
+            >
+                {t('join-community')}
+            </Button>
 
 
-                    <ImageGroup />
-                </div>
-            </section>
-        </div>
+            <div className="w-full max-w-[775px] mt-12 justify-between items-center bg-white rounded-full border-2 border-black pl-8 py-3 pr-3 h-20 shadow-[3px_3px_0px_black] hidden md:inline-flex">
+                <span className="text-[18px] font-semibold md:max-w-[521px] truncate">
+                    {address}
+                </span>
+                <CopyButton text={t('copy')} copyText={address} className="text-[22px] gap-4" />
+            </div>
+
+
+            <ImageGroup />
+        </Section>
     );
 }
 

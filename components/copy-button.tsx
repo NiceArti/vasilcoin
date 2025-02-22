@@ -37,15 +37,14 @@ export function CopyButton({ className, text, copyText }: { className?: string, 
     return (
         <Button 
             className={cn(
-                "w-44 h-16 rounded-full bg-[#FBAC01] border border-black shadow-[3px_3px_0px_black] hover:bg-[#fb8f01] font-bold text-lg text-black",
+                "h-full text-lg px-6",
                 className
             )}
+            variant={'outline'}
             onClick={handleCopy}
         >
-            <div className="inline-flex justify-around items-center w-full">
-                <IoCopyOutline className="scale-150" />{" "}
-                {buttonText}
-            </div>
+            <IoCopyOutline className="scale-150" />{" "}
+            {buttonText}
         </Button>
     );
 }

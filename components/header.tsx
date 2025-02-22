@@ -5,7 +5,6 @@ import React, { useEffect, useState, useTransition } from "react";
 import { motion } from "framer-motion";
 import { cn, scrollToId } from "@/lib/utils";
 import Image from "next/image";
-import Link from "next/link";
 import { CopyButton } from "./copy-button";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
@@ -17,12 +16,12 @@ export function Header({ className }: { className?: string }) {
 
     return (
         <div
-            className={cn("absolute top-8 px-6 w-[95%] max-w-[1000px] inline-flex justify-between inset-x-0 mx-auto h-[88px] z-50 bg-white rounded-full items-center", className)}
+            className={cn("inline-flex justify-between items-center w-full h-[66px] px-3 py-2 rounded-full bg-white sm:py-3 sm:h-[88px]", className)}
         >
             <CopyButton
                 text={t('contract')}
                 copyText="EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf"
-                className="w-48 sm:hidden"
+                className="max-w-40 h-full sm:hidden"
             />
 
             <Image
@@ -90,20 +89,19 @@ function LanguageToggle() {
     return (
         <div
             onClick={toggleLanguage}
-            className="relative w-[120px] h-[64px] bg-[#FBAC01] rounded-full cursor-pointer select-none border border-black"
+            className="relative inline-flex justify-between items-center w-[108px] h-full rounded-full cursor-pointer select-none border border-black shadow-[3px_3px_0px_black] bg-[#FBAC01] text-black font-bold px-4 text-[17px] sm:text-[22px] sm:px-4 sm:w-[120px]"
         >
             {/* Текстовые метки */}
-            <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black text-[22px] font-bold z-10">
+            <span className="z-10">
                 EN
             </span>
-            <span className="absolute right-4 top-1/2 transform -translate-y-1/2 text-black text-[22px] font-bold z-10">
+            <span className="z-10">
                 РУ
             </span>
 
             {/* Анимированный кружок */}
             <motion.div
-                className="absolute top-1/2 bg-[#FFF] rounded-full size-12 border border-black shadow-[2px_2px_0px_black]"
-                style={{ transform: "translateY(-50%)" }}
+                className="absolute top-1/2 -translate-y-1/2 bg-[#FFF] rounded-full aspect-square h-[calc(100%-12px)] border border-black shadow-[2px_2px_0px_black]"
                 initial={{ left: language === "en" ? leftPos : rightPos }}
                 animate={{ left: language === "en" ? leftPos : rightPos }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}
