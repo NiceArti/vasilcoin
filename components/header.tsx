@@ -3,12 +3,13 @@
 
 import React, { useEffect, useState, useTransition } from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
+import { cn, scrollToId } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
 import { CopyButton } from "./copy-button";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
+import { Button } from "./ui/button";
 
 
 export function Header({ className }: { className?: string }) {
@@ -34,9 +35,24 @@ export function Header({ className }: { className?: string }) {
             />
             
             <div className="hidden sm:inline-flex gap-3">
-                <Link className="md:text-[22px] text-lg font-semibold transition-all duration-200 hover:font-black" href={'#'}>{t('about')}</Link>
-                <Link className="md:text-[22px] text-lg font-semibold transition-all duration-200 hover:font-black" href={'#'}>{t('values')}</Link>
-                <Link className="md:text-[22px] text-lg font-semibold transition-all duration-200 hover:font-black" href={'#'}>{t('tokenomics')}</Link>
+                <Button
+                    onClick={() => scrollToId('about')}
+                    className="md:text-[22px] text-lg font-semibold transition-all duration-200 hover:font-black p-0 text-black bg-inherit shadow-none hover:bg-inherit"
+                >
+                    {t('about')}
+                </Button>
+                <Button
+                    onClick={() => scrollToId('values')}
+                    className="md:text-[22px] text-lg font-semibold transition-all duration-200 hover:font-black p-0 text-black bg-inherit shadow-none hover:bg-inherit"
+                >
+                    {t('values')}
+                </Button>
+                <Button
+                    onClick={() => scrollToId('tokenomics')}
+                    className="md:text-[22px] text-lg font-semibold transition-all duration-200 hover:font-black p-0 text-black bg-inherit shadow-none hover:bg-inherit"
+                >
+                    {t('tokenomics')}
+                </Button>
             </div>
 
             <LanguageToggle />

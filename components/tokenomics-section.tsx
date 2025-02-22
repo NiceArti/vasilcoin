@@ -11,7 +11,7 @@ export function TokenomicsSection() {
     const t = useTranslations('TokenomicsSection');
 
     return (
-        <section className="w-full pt-[40px] relative border-b-2 md:border-b-4 border-black overflow-x-clip bg-[#FEFCE2]">
+        <section id="tokenomics" className="w-full pt-[40px] relative border-b-2 md:border-b-4 border-black overflow-x-clip bg-[#FEFCE2]">
             <h1 className="font-bold text-[36px] text-center">
                 <BBCodeRenderer text={t('title')} />
             </h1>

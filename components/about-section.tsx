@@ -15,7 +15,7 @@ export function AboutSection() {
     const t = useTranslations('AboutSection');
 
     return (
-        <section className="w-full bg-emoji-tiled bg-repeat border-b-2 sm:border-b-4 border-black">
+        <section id="about" className="w-full bg-emoji-tiled bg-repeat border-b-2 sm:border-b-4 border-black">
             <div className="w-full h-[731px] relative overflow-x-clip top-10">
                 <Image
                     {...AboutUsFrame}

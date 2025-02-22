@@ -17,7 +17,7 @@ import { BBCodeRenderer } from "./ui/code-renderer";
 
 export function ValuesSection() {
     return (
-        <section className="relative w-full mx-auto py-10 px-7 md:h-max md:py-0 border-b-2 md:border-b-4 border-black overflow-clip">
+        <section id="values" className="relative w-full mx-auto py-10 px-7 md:h-max md:py-0 border-b-2 md:border-b-4 border-black overflow-clip">
             <div className="md:hidden">
                 <CardGroupMobile />
             </div>
