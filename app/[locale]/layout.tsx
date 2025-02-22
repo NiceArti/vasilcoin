@@ -13,20 +13,21 @@ const nunito = Nunito({
 
 export default async function LocaleLayout({
   children,
-  params: {locale}
+  params,
 }: Readonly<{
   children: React.ReactNode,
-  params: {locale: string}
+  params: Promise<{ locale: string }>
 }>) {
+  const resolvedParams = await params;
   // Ensure that the incoming `locale` is valid
-  if (!routing.locales.includes(locale as any)) {
+  if (!routing.locales.includes(resolvedParams.locale as any)) {
     notFound();
   }
 
   const messages = await getMessages();
 
   return (
-    <html lang={locale}>
+    <html lang={resolvedParams.locale}>
       <body
         className={`${nunito.variable} antialiased`}
       >
