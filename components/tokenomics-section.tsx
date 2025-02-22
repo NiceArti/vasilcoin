@@ -4,20 +4,24 @@ import { cn } from "@/lib/utils";
 import { useState } from "react";
 import LogoCoin from '@/public/logo-coin.png'
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { BBCodeRenderer } from "./ui/code-renderer";
 
 export function TokenomicsSection() {
+    const t = useTranslations('TokenomicsSection');
+
     return (
         <section className="w-full pt-[40px] relative border-b-2 md:border-b-4 border-black overflow-x-clip bg-[#FEFCE2]">
-            <h1 className="font-bold text-[36px] text-center">Распределение<br />улыбок и добра</h1>
-            
-            
+            <h1 className="font-bold text-[36px] text-center">
+                <BBCodeRenderer text={t('title')} />
+            </h1>
             <StylizedDonutChart />
-            
         </section>
     );
 }
 
 const StylizedDonutChart = () => {
+    const t = useTranslations('TokenomicsSection');
     const [hoverSegment, setHoverSegment] = useState<number | null>(null);
     const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
 
@@ -27,43 +31,43 @@ const StylizedDonutChart = () => {
             id: 1,
             value: 20,
             color: "#EA2A7B",
-            label: "Ликвидность",
-            description: "Пул счастья",
+            label: t('data.0.label'),
+            description: t('data.0.description'),
         },
         {
             id: 2,
             value: 15,
             color: "#19E54C",
-            label: "Награды",
-            description: "Пул улыбки",
+            label: t('data.1.label'),
+            description: t('data.1.description'),
         },
         {
             id: 3,
             value: 10,
             color: "#ED8D18",
-            label: "Фонд Помощи",
-            description: "Пул доброты",
+            label: t('data.2.label'),
+            description: t('data.2.description'),
         },
         {
             id: 4,
             value: 25,
             color: "#EBC822",
-            label: "Наша экосистема",
-            description: "Пул стиля",
+            label: t('data.3.label'),
+            description: t('data.3.description'),
         },
         {
             id: 5,
             value: 20,
             color: "#AEE02C",
-            label: "Маркетинг",
-            description: "Пул света",
+            label: t('data.4.label'),
+            description: t('data.4.description'),
         },
         {
             id: 6,
             value: 10,
             color: "#2580D1",
-            label: "Стабфонд",
-            description: "Резезв лучей",
+            label: t('data.5.label'),
+            description: t('data.5.description'),
         },
     ];
 

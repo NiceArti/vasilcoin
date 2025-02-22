@@ -1,0 +1,139 @@
+{
+	"Header": {
+		"about": "About project",
+		"values": "Values",
+		"tokenomics": "Tokenomics",
+		"contract": "Contract"
+	},
+	"HeroSection": {
+		"description": "[b]$VASIL[/b] is a memcoin that brings kindness,[br]style and smiles!",
+		"join-community": "Join the community",
+		"copy": "Copy"
+	},
+	"AboutSection": {
+		"title": "About VASILCOIN",
+		"description": "It's not just a memcoin in [b class='text-black']blockchain TON[/b] it is a symbol of joy, kindness and style. It was created to inspire, unite people and make the world brighter and happier."
+	},
+	"ValuesSection": {
+		"title": "Values of[br]VASILCOIN",
+		"values": {
+			"0": {
+				"title": "Kindness",
+				"description": "VASILCOIN makes the world a kinder place."
+			},
+			"1": {
+				"title": "Style",
+				"description": "VASILCOIN is the art of being yourself."
+			},
+			"2": {
+				"title": "Smiles",
+				"description": "This is our main currency."
+			}
+		}
+	},
+	"ListingSection": {
+		"title": "The listing will start in:",
+		"description": "Don't miss the opportunity to become a part[br]of the #VASILCOIN movement!",
+		"join": "Join",
+		"time-units": {
+			"days": "Days",
+			"hours": "Hours",
+			"minutes": "Minutes",
+			"seconds": "Seconds"
+		}
+	},
+	"HowToUseSection": {
+		"title": "How to use[br]VASILCOIN",
+		"card": {
+			"0": {
+				"title": "The coin brings style",
+				"description": "You could be the owner of the most fashionable accessories that shine like your smile!"
+			},
+			"1": {
+				"title": "Spread the good",
+				"description": "Your coins could turn into good deeds that change the world."
+			},
+			"2": {
+				"title": "A smile has value",
+				"description": "Your smile becomes a real wealth, and VASILCOIN enhances it!"
+			}
+		}
+	},
+	"TokenomicsSection": {
+		"title": "Distribution of[br]smiles and kindness",
+		"data": {
+			"0": {
+				"label": "Liquidity",
+				"description": "The Pool of happiness"
+			},
+			"1": {
+				"label": "Awards",
+				"description": "Smile Pool"
+			},
+			"2": {
+				"label": "The Relief Fund",
+				"description": "Pool of kindness"
+			},
+			"3": {
+				"label": "Our ecosystem",
+				"description": "The style Pool"
+			},
+			"4": {
+				"label": "Marketing",
+				"description": "Pool of light"
+			},
+			"5": {
+				"label": "Stabfund",
+				"description": "Ray reserve"
+			}
+		}
+	},
+	"PartnersSection": {
+		"title-mobile": "Partners from[br]VASILCOIN",
+		"title-pc": "Partners who[br]will appear for VASILCOIN",
+		"description": "Your trust in VASILCOIN inspires you to create partnerships that will bring kindness, style and joy.",
+		"data": {
+			"0": {
+				"title": "The House of Joy",
+				"description": "A fashion house that creates the art of style."
+			},
+			"1": {
+				"title": "Shining Hearts",
+				"description": "The Foundation for helping those in need with kindness and a smile."
+			},
+			"2": {
+				"title": "The Puppy Shop",
+				"description": "A place of true happiness from cuddling with pets."
+			},
+			"3": {
+				"title": "Gorgeous scarves",
+				"description": "A brand of elegant accessories and fashionistas."
+			},
+			"4": {
+				"title": "The Rich People's Fund",
+				"description": "We inspire rich people to do good deeds."
+			},
+			"5": {
+				"title": "Shining Studio",
+				"description": "Provides unique decorations for joy."
+			},
+			"6": {
+				"title": "Happiness Exchange",
+				"description": "A place to exchange kindness and good mood."
+			},
+			"7": {
+				"title": "The Scarf Exchange",
+				"description": "A platform for fashionable and shining shopping."
+			},
+			"8": {
+				"title": "A corner of paradise",
+				"description": "The resort is for those who appreciate style and comfort."
+			}
+		}
+	},
+	"FooterSection": {
+		"description": "Join the #VASILCOIN movement and help the world become brighter, kinder and stronger!",
+		"copyright": "All rights reserved.",
+		"linktree": "Together for a smile with #VASILCOIN!"
+	}
+}

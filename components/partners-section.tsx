@@ -6,6 +6,8 @@ import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
 import LipriconBoot from '@/public/lipricon-boot.png';
 import Scarf from '@/public/scarf.png';
+import { useTranslations } from "next-intl";
+import { BBCodeRenderer } from "./ui/code-renderer";
 
 export function PartnersSection() {
     return (
@@ -17,58 +19,36 @@ export function PartnersSection() {
 }
 
 function Mobile() {
+    const t = useTranslations('PartnersSection');
+
     return (
         <div className="md:hidden">
-            <h1 className="font-bold text-[36px] text-center z-20">Партнеры от<br />VASILCOIN</h1>
+            <h1 className="font-bold text-[36px] text-center z-20">
+                <BBCodeRenderer text={t('title-mobile')} />
+            </h1>
 
             <p className="mt-5 text-base text-center mx-auto max-w-[320px] z-20">
-                Ваше доверие к VASILCOIN вдохновляет на создание партнёрств, которые принесут добро, стиль и радость
+                {t('description')}
             </p>
 
             <Carousel>
                 <CarouselContent className="min-w-[300px] max-w-[320px] w-[60%] mx-auto mt-[44px] mb-[60px]">
-                    <CarouselItem className="flex flex-col gap-5">
-                        <Card
-                            title="Дом Радости"
-                            description="Модный дом, создающий искусство стиля."
-                        />
-                        <Card
-                            title="Сияющие сердца"
-                            description="Фонд помощи нуждающимся в доброте и улыбке."
-                        />
-                        <Card
-                            title="Магазин щеночков"
-                            description="Место истинного счастья от объятий с питомцами."
-                        />
-                    </CarouselItem>
-                    <CarouselItem className="flex flex-col gap-5">
-                        <Card
-                            title="Шикарные шарфики"
-                            description="Бренд элегантных аксессуаров и фешенебельностей."
-                        />
-                        <Card
-                            title="Фонд богачей"
-                            description="Вдохновляем богатых людей делать добые дела."
-                        />
-                        <Card
-                            title="Сияющая студия"
-                            description="Предоставляет уникальные украшения для радости."
-                        />
-                    </CarouselItem>
-                    <CarouselItem className="flex flex-col gap-5">
-                        <Card
-                            title="Биржа счастья"
-                            description="Место для обмена добром и хорошим настроением."
-                        />
-                        <Card
-                            title="Биржа шарфиков"
-                            description="Платформа для модных и сияющих покупок."
-                        />
-                        <Card
-                            title="Райский уголок"
-                            description="Курорт для тех, кто ценит стиль и комфорт."
-                        />
-                    </CarouselItem>
+                    {[...Array(3)].map((_, i) => (
+                        <CarouselItem key={i} className="flex flex-col gap-5">
+                            <Card
+                                title={t(`data.${i * 3}.title`)}
+                                description={t(`data.${i * 3}.description`)}
+                            />
+                            <Card
+                                title={t(`data.${i * 3 + 1}.title`)}
+                                description={t(`data.${i * 3 + 1}.description`)}
+                            />
+                            <Card
+                                title={t(`data.${i * 3 + 2}.title`)}
+                                description={t(`data.${i * 3 + 2}.description`)}
+                            />
+                        </CarouselItem>
+                    ))}
                 </CarouselContent>
             </Carousel>
 
@@ -88,58 +68,36 @@ function Mobile() {
 
 
 function PC() {
+    const t = useTranslations('PartnersSection');
+
     return (
         <div className="relative hidden md:block max-w-7xl w-full mx-auto top-[50px]">
-            <h1 className="font-bold text-[64px] lg:text-[72px] text-center z-20 w-[80%] mx-auto">Партнеры, которые<br />появятся для VASILCOIN</h1>
+            <h1 className="font-bold text-[64px] lg:text-[72px] text-center z-20 w-[80%] mx-auto">
+                <BBCodeRenderer text={t('title-pc')} />
+            </h1>
 
             <p className="mt-5 text-[24px] lg:text-[28px] text-center mx-auto max-w-[950px] w-[80%] z-20">
-                Ваше доверие к VASILCOIN вдохновляет на создание партнёрств, которые принесут добро, стиль и радость
+                {t('description')}
             </p>
 
-        
+
             <div className="inline-flex gap-5 justify-center w-full mt-[70px] mb-[140px]">
-                <div className="flex flex-col gap-5">
-                    <Card
-                        title="Дом Радости"
-                        description="Модный дом, создающий искусство стиля."
-                    />
-                    <Card
-                        title="Сияющие сердца"
-                        description="Фонд помощи нуждающимся в доброте и улыбке."
-                    />
-                    <Card
-                        title="Магазин щеночков"
-                        description="Место истинного счастья от объятий с питомцами."
-                    />
-                </div>
-                <div className="flex flex-col gap-5">
-                    <Card
-                        title="Шикарные шарфики"
-                        description="Бренд элегантных аксессуаров и фешенебельностей."
-                    />
-                    <Card
-                        title="Фонд богачей"
-                        description="Вдохновляем богатых людей делать добые дела."
-                    />
-                    <Card
-                        title="Сияющая студия"
-                        description="Предоставляет уникальные украшения для радости."
-                    />
-                </div>
-                <div className="flex flex-col gap-5">
-                    <Card
-                        title="Биржа счастья"
-                        description="Место для обмена добром и хорошим настроением."
-                    />
-                    <Card
-                        title="Биржа шарфиков"
-                        description="Платформа для модных и сияющих покупок."
-                    />
-                    <Card
-                        title="Райский уголок"
-                        description="Курорт для тех, кто ценит стиль и комфорт."
-                    />
-                </div>
+                {[...Array(3)].map((_, i) => (
+                    <div key={i} className="flex flex-col gap-5">
+                        <Card
+                            title={t(`data.${i * 3}.title`)}
+                            description={t(`data.${i * 3}.description`)}
+                        />
+                        <Card
+                            title={t(`data.${i * 3 + 1}.title`)}
+                            description={t(`data.${i * 3 + 1}.description`)}
+                        />
+                        <Card
+                            title={t(`data.${i * 3 + 2}.title`)}
+                            description={t(`data.${i * 3 + 2}.description`)}
+                        />
+                    </div>
+                ))}
             </div>
 
             <Image

@@ -12,6 +12,8 @@ import Cloud0 from '@/public/cloud-0.png';
 import Cloud1 from '@/public/cloud-1.png';
 import Cloud2 from '@/public/cloud-2.png';
 import Vasilenco from "@/public/vasilenco-full-height.png";
+import { useTranslations } from "next-intl";
+import { BBCodeRenderer } from "./ui/code-renderer";
 
 export function ValuesSection() {
     return (
@@ -40,29 +42,31 @@ export function ValuesSection() {
 
 
 function CardGroupMobile() {
+    const t = useTranslations('ValuesSection');
+
     return (
         <>
             <h1 className="font-bold text-center text-[36px] mb-8 md:mb-0 md:text-[72px]">
-                Ценности<br />VASILCOIN
+                <BBCodeRenderer text={t('title')} />
             </h1>
 
 
             <div className="flex flex-col gap-6">
                 <Card
-                    title="Доброта"
-                    description="VASILCOIN делает мир добрее."
+                    title={t('values.0.title')}
+                    description={t('values.0.description')}
                     logo={SupportIcon}
                     logoCloud={Cloud0}
                 />
                 <Card
-                    title="Стиль"
-                    description="VASILCOIN - искусство быть собой."
+                    title={t('values.1.title')}
+                    description={t('values.1.description')}
                     logo={ManagementIcon}
                     logoCloud={Cloud1}
                 />
                 <Card
-                    title="Улыбки"
-                    description="Это наша главная валюта."
+                    title={t('values.2.title')}
+                    description={t('values.2.description')}
                     logo={EmojiIcon}
                     logoCloud={Cloud2}
                 />
@@ -72,6 +76,8 @@ function CardGroupMobile() {
 }
 
 function CardGroupPC() {
+    const t = useTranslations('ValuesSection');
+
     return (
         <div className="w-full hidden md:inline-flex justify-between max-w-5xl">
             <div className="relative size-[600px] lg:size-[721px]">
@@ -96,25 +102,25 @@ function CardGroupPC() {
 
             <div className="mt-8 lg:mt-14">
                 <h1 className="font-bold text-[58px]">
-                    Ценности<br />VASILCOIN
+                    <BBCodeRenderer text={t('title')} />
                 </h1>
 
                 <div className="flex flex-col gap-6">
                     <Card
-                        title="Доброта"
-                        description="VASILCOIN делает мир добрее."
+                        title={t('values.0.title')}
+                        description={t('values.0.description')}
                         logo={SupportIcon}
                         logoCloud={Cloud0}
                     />
                     <Card
-                        title="Стиль"
-                        description="VASILCOIN - искусство быть собой."
+                        title={t('values.1.title')}
+                        description={t('values.1.description')}
                         logo={ManagementIcon}
                         logoCloud={Cloud1}
                     />
                     <Card
-                        title="Улыбки"
-                        description="Это наша главная валюта."
+                        title={t('values.2.title')}
+                        description={t('values.2.description')}
                         logo={EmojiIcon}
                         logoCloud={Cloud2}
                     />

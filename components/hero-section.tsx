@@ -1,7 +1,7 @@
 'use client'
 
-
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import { Button } from "./ui/button";
 import { CopyButton } from "./copy-button";
@@ -12,9 +12,12 @@ import VasilencoAsset from '@/public/vasilenco.png';
 import CloudGroup from '@/public/clouds-group.png';
 import VasilcoinText from '@/public/vasilcoin-text.png';
 import DogAsset from '@/public/dog.png';
+import { BBCodeRenderer } from "@/components/ui/code-renderer";
 
 
 export function HeroSection() {
+    const t = useTranslations('HeroSection');
+
     return (
         <div className="w-full flex justify-center mt-16">
             <section className="mt-24 px-4 w-full max-w-[1745px] relative m-auto inline-flex">
@@ -22,24 +25,21 @@ export function HeroSection() {
                     <Image className="hidden md:block" {...CloudGroup} alt="Funny clouds" quality={100}/>
                     <Image {...VasilcoinText}  className="mx-auto h-[60px] w-[288px] md:mx-0 md:w-auto md:h-auto max-h-28 max-w-[520px]" alt="VASILCOIN" quality={100}/>
                     <div className="hidden md:flex flex-col gap-4">
-                        <p className="font-semibold text-3xl lg:text-5xl">
-                            <b>$VASIL</b> - Мем-коин, который приносит
-                        </p>
-                        <p className="font-semibold text-3xl lg:text-5xl">
-                            добро, стиль и улыбки!
+                        <p className="font-semibold text-3xl lg:text-5xl leading-[52px]">
+                            <BBCodeRenderer text={t('description')} />
                         </p>
                     </div>
 
                     <Button
                         className={"mx-auto mt-44 md:mx-0 md:mt-12 w-max h-[72px] px-12 rounded-full bg-[#FBAC01] border border-black shadow-[3px_3px_0px_black] hover:bg-[#fb8f01] font-bold text-[22px] text-black"}
                     >
-                        Вступить в сообщество
+                        {t('join-community')}
                     </Button>
 
 
                     <div className="hidden md:inline-flex mt-12 w-max bg-white rounded-full border-2 border-black pl-8  py-2 pr-2 gap-3 shadow-[3px_3px_0px_black] items-center">
                         <span className="text-[18px] font-semibold">EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf</span>
-                        <CopyButton text="Копировать" copyText="EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf"/>
+                        <CopyButton text={t('copy')} copyText="EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf"/>
                     </div>
 
 

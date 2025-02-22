@@ -2,14 +2,18 @@
 
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 import AboutUsFrame from '@/public/about-us-frame.png';
 import IconGroupLg from '@/public/frame-coins.png';
 import IconGroupSm from '@/public/frame-coins-sm.png';
 import LogoCoin from '@/public/logo-coin.png';
 import LogoCoin1 from '@/public/logo-coin-1.png';
+import { BBCodeRenderer } from "./ui/code-renderer";
 
 export function AboutSection() {
+    const t = useTranslations('AboutSection');
+
     return (
         <section className="w-full bg-emoji-tiled bg-repeat border-b-2 sm:border-b-4 border-black">
             <div className="w-full h-[731px] relative overflow-x-clip top-10">
@@ -21,9 +25,11 @@ export function AboutSection() {
                 />
 
                 <div className="mx-auto relative max-w-[838px] top-[25%]">
-                    <h1 className="text-center font-bold text-[32px] mb-5 md:mb-0 md:text-[72px]">О VASILCOIN</h1>
+                    <h1 className="text-center font-bold text-[32px] mb-5 md:mb-0 md:text-[72px]">
+                        {t('title')}
+                    </h1>
                     <p className="mt-2 text-center mx-auto  w-[80%] text-[18px] md:w-[90%] lg:w-full lg:text-[28px] text-[#5A5C57]">
-                        Это не просто мем-коин в <b className="font-bold text-black">блокчейне TON</b>, а символ радости, доброты и стиля. Он создан, чтобы вдохновлять, объединять людей и делать мир ярче и счастливее.
+                        <BBCodeRenderer text={t('description')} />
                     </p>
                     <Image
                         {...IconGroupLg}

@@ -9,15 +9,18 @@ import VasilcoinText from '@/public/vasilcoin-text.png';
 import LogoCoin from '@/public/logo-coin.png';
 import Link from "next/link";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 
 export function Footer() {
+    const t = useTranslations('FooterSection');
+
     return (
         <div className="w-full max-w-6xl mx-auto py-10 px-7 flex flex-col gap-3">
             <Logo />
 
             <p className="font-semibold text-lg text-center w-[80%] mx-auto">
-                Присоединяйтесь к движению #VASILCOIN и помогите миру стать ярче, добрее и стильнее!
+                {t('description')}
             </p>
             
             <div className="w-full mx-auto max-w-[600px]">
@@ -26,14 +29,14 @@ export function Footer() {
                     className="my-4 w-full inline-flex items-center justify-center rounded-full border border-black shadow-[2px_2px_0px_black] bg-[#FBAC01] font-bold text-base gap-3 py-4 hover:bg-[#fb9701]"
                 >
                     <LuMousePointerClick className="scale-x-[-1] text-[23px]"/>
-                    Вместе за улыбку с #VASILCOIN!
+                    {t('linktree')}
                 </Link>
             </div>
 
             <div className="inline-flex justify-between w-full mt-5 items-center">
                 <p className="text-[#5A5C57] md:text-[18px]">
                     Copyright &copy; 2025 $VASIL.
-                    Все права защищены.
+                    {t('copyright')}
                 </p>
                 <div className="inline-flex gap-3">
                     <SocialButton icon={<FaDiscord className="text-2xl" />} />

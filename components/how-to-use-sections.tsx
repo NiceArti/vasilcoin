@@ -6,71 +6,43 @@ import { cn } from "@/lib/utils";
 import EmojiIcon from '@/public/emoji-icon.png';
 import SupportIcon from '@/public/support-icon.png';
 import ManagementIcon from '@/public/managment-icon.png';
+import { useTranslations } from "next-intl";
+import { BBCodeRenderer } from "./ui/code-renderer";
 
 export function HowToUse() {
+    const t = useTranslations('HowToUseSection');
     return (
         <section className="w-full mx-auto py-10 px-7 flex flex-col gap-3 border-b-2 md:border-b-4 md:pb-[100px] border-black">
-            <h1 className="font-bold text-center text-[36px] mb-8 md:mb-0 md:text-[72px]">Как использовать<br/>VASILCOIN</h1>
-            
-            <CardGroup />
+            <h1 className="font-bold text-center text-[36px] mb-8 md:mb-0 md:text-[72px]">
+                <BBCodeRenderer text={t('title')} />
+            </h1>
+
+            <div className="flex flex-col gap-8 justify-center mx-auto lg:flex-row">
+                {[
+                    { logo: ManagementIcon, title: t('card.0.title'), description: t('card.0.description') },
+                    { logo: SupportIcon, title: t('card.1.title'), description: t('card.1.description') },
+                    { logo: EmojiIcon, title: t('card.2.title'), description: t('card.2.description') },
+                ].map((card, index) => (
+                    <Card
+                        key={index}
+                        logo={card.logo}
+                        title={card.title}
+                        description={card.description}
+                        className="max-w-[416px]"
+                    />
+                ))}
+            </div>
         </section>
     );
 }
 
-
-function CardGroup() {
-    return (
-        <>
-            <div className="h-auto flex flex-col gap-6 lg:hidden">
-                <Card
-                    logo={ManagementIcon}
-                    title="Монета приносит стиль"
-                    description="Вы могли бы быть обладателем самых модных аксессуаров, сияющих как ваша улыбка!"
-                    className="md:min-w-[416px]"
-                />
-                <Card
-                    logo={SupportIcon}
-                    title="Распространяй добро"
-                    description="Ваши монеты могли бы превращаться в добрые дела, которые меняют мир."
-                    className="md:min-w-[416px]"
-                />
-                <Card
-                    logo={EmojiIcon}
-                    title="Улыбка имеет ценность"
-                    description="Ваша улыбка становится настоящим богатством, а Василькоин её усиливает!"
-                    className="md:min-w-[416px]"
-                />
-            </div>
-            <div className="w-full h-auto hidden lg:inline-flex gap-4 justify-center">
-                <Card
-                    logo={ManagementIcon}
-                    title="Монета приносит стиль"
-                    description="Вы могли бы быть обладателем самых модных аксессуаров, сияющих как ваша улыбка!"
-                    className="max-w-[416px]"
-                />
-                <Card
-                    logo={SupportIcon}
-                    title="Распространяй добро"
-                    description="Ваши монеты могли бы превращаться в добрые дела, которые меняют мир."
-                    className="max-w-[416px]"
-                />
-                <Card
-                    logo={EmojiIcon}
-                    title="Улыбка имеет ценность"
-                    description="Ваша улыбка становится настоящим богатством, а Василькоин её усиливает!"
-                    className="max-w-[416px]"
-                />
-            </div>
-        </>
-    );
-}
 
 function Card({
     title,
     description,
     logo,
     className,
-}:{
+}: {
     title: string,
     description: string,
     logo: StaticImageData,
