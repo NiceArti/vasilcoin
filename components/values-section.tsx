@@ -14,6 +14,7 @@ import Cloud2 from '@/public/cloud-2.png';
 import Vasilenco from "@/public/vasilenco-full-height.png";
 import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
+import { Title } from "./ui/title";
 
 export function ValuesSection() {
     return (
@@ -46,9 +47,9 @@ function CardGroupMobile() {
 
     return (
         <>
-            <h1 className="font-bold text-center text-[36px] mb-8 md:mb-0 md:text-[72px]">
+            <Title className="text-center mb-8 md:mb-0">
                 <BBCodeRenderer text={t('title')} />
-            </h1>
+            </Title>
 
 
             <div className="flex flex-col gap-6">
@@ -101,9 +102,9 @@ function CardGroupPC() {
             </div>
 
             <div className="mt-8 lg:mt-14">
-                <h1 className="font-bold text-[58px]">
+                <Title>
                     <BBCodeRenderer text={t('title')} />
-                </h1>
+                </Title>
 
                 <div className="flex flex-col gap-6">
                     <Card

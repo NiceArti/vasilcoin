@@ -8,14 +8,15 @@ import SupportIcon from '@/public/support-icon.png';
 import ManagementIcon from '@/public/managment-icon.png';
 import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
+import { Title } from "./ui/title";
 
 export function HowToUse() {
     const t = useTranslations('HowToUseSection');
     return (
         <section className="w-full mx-auto py-10 px-7 flex flex-col gap-3 border-b-2 md:border-b-4 md:pb-[100px] border-black">
-            <h1 className="font-bold text-center text-[36px] mb-8 md:mb-0 md:text-[72px]">
+            <Title className="text-center mb-8 md:mb-0">
                 <BBCodeRenderer text={t('title')} />
-            </h1>
+            </Title>
 
             <div className="flex flex-col gap-8 justify-center mx-auto lg:flex-row">
                 {[

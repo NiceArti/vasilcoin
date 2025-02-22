@@ -11,6 +11,7 @@ import Rocket from '@/public/rocket.png';
 import BgCloud from '@/public/background/cloud.png';
 import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
+import { Title } from "./ui/title";
 
 
 export function ListingSection() {
@@ -91,9 +92,9 @@ function Mobile({
     };
     return(
         <div className="max-w-[300px] mx-auto md:hidden">
-            <h1 className="font-bold text-[36px]">
-                {t('title')}
-            </h1>
+            <Title>
+                <BBCodeRenderer text={t('title')} />
+            </Title>
             
             <Countdown
                 date={finishTime}
@@ -146,7 +147,9 @@ function PC({
     };
     return(
         <div className="hidden w-full max-w-5xl mx-auto md:block">
-            <h1 className="font-bold text-[72px] text-center">{t('title')}</h1>
+            <Title className="text-center">
+                <BBCodeRenderer text={t('title')} />
+            </Title>
             
             <Countdown
                 date={finishTime}

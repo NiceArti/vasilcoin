@@ -8,6 +8,7 @@ import LipriconBoot from '@/public/lipricon-boot.png';
 import Scarf from '@/public/scarf.png';
 import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
+import { Title } from "./ui/title";
 
 export function PartnersSection() {
     return (
@@ -23,9 +24,9 @@ function Mobile() {
 
     return (
         <div className="md:hidden">
-            <h1 className="font-bold text-[36px] text-center z-20">
+            <Title className="text-center">
                 <BBCodeRenderer text={t('title-mobile')} />
-            </h1>
+            </Title>
 
             <p className="mt-5 text-base text-center mx-auto max-w-[320px] z-20">
                 {t('description')}
@@ -72,9 +73,9 @@ function PC() {
 
     return (
         <div className="relative hidden md:block max-w-7xl w-full mx-auto top-[50px]">
-            <h1 className="font-bold text-[64px] lg:text-[72px] text-center z-20 w-[80%] mx-auto">
+            <Title className="text-center">
                 <BBCodeRenderer text={t('title-pc')} />
-            </h1>
+            </Title>
 
             <p className="mt-5 text-[24px] lg:text-[28px] text-center mx-auto max-w-[950px] w-[80%] z-20">
                 {t('description')}

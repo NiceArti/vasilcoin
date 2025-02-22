@@ -17,7 +17,7 @@ export function Header({ className }: { className?: string }) {
 
     return (
         <div
-            className={cn("absolute top-8 px-6 w-[95%] max-w-[1000px] inline-flex justify-between inset-x-0 mx-auto h-[88px] z-50 bg-[#FFF3DA] rounded-full items-center", className)}
+            className={cn("absolute top-8 px-6 w-[95%] max-w-[1000px] inline-flex justify-between inset-x-0 mx-auto h-[88px] z-50 bg-white rounded-full items-center", className)}
         >
             <CopyButton
                 text={t('contract')}

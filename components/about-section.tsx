@@ -10,6 +10,7 @@ import IconGroupSm from '@/public/frame-coins-sm.png';
 import LogoCoin from '@/public/logo-coin.png';
 import LogoCoin1 from '@/public/logo-coin-1.png';
 import { BBCodeRenderer } from "./ui/code-renderer";
+import { Title } from "./ui/title";
 
 export function AboutSection() {
     const t = useTranslations('AboutSection');
@@ -25,9 +26,9 @@ export function AboutSection() {
                 />
 
                 <div className="mx-auto relative max-w-[838px] top-[25%]">
-                    <h1 className="text-center font-bold text-[32px] mb-5 md:mb-0 md:text-[72px]">
+                    <Title className="text-center mb-5 md:mb-0">
                         {t('title')}
-                    </h1>
+                    </Title>
                     <p className="mt-2 text-center mx-auto  w-[80%] text-[18px] md:w-[90%] lg:w-full lg:text-[28px] text-[#5A5C57]">
                         <BBCodeRenderer text={t('description')} />
                     </p>
