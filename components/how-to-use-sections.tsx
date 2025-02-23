@@ -53,7 +53,7 @@ function Card({
     className?: string
 }) {
     return (
-        <div className={cn("border border-black shadow-[3px_3px_0px_black] bg-[#FFF7D5] font-bold text-base gap-3 p-8 rounded-3xl", className)}>
+        <div className={cn("border border-black shadow-[3px_3px_0px_black] bg-white font-bold text-base gap-3 p-8 rounded-3xl", className)}>
             <Image
                 {...logo}
                 className="w-[64px] mx-auto md:w-[80px]"
