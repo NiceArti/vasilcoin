@@ -167,6 +167,7 @@ const StylizedDonutChart = () => {
                             }
                             onMouseLeave={() => setHoverSegment(null)}
                             onTouchMove={() => setHoverSegment(null)}
+                            onTouchMoveCapture={() => setHoverSegment(null)}
                             className="cursor-pointer transition-all duration-200"
                             style={{
                                 transform:
