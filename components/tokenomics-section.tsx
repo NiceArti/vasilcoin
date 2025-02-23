@@ -157,6 +157,7 @@ const StylizedDonutChart = () => {
                             fill={segment.color}
                             stroke="black"
                             strokeWidth="2"
+                            onTouchMove={(e) => setHoverSegment(null)}
                             onMouseEnter={(e) => {
                                 setHoverSegment(segment.id);
                                 setTooltipPos({ x: e.clientX, y: e.clientY - 20 });
@@ -363,7 +364,6 @@ const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) 
         >
             <foreignObject x="-105.45" y="-105.389" width="329.841" height="250.861">
                 <div
-                    
                     style={{
                         backdropFilter: 'blur(53.08px)',
                         clipPath: `url(#bgblur_0_8_12964_clip_path)`,
