@@ -157,7 +157,6 @@ const StylizedDonutChart = () => {
                             fill={segment.color}
                             stroke="black"
                             strokeWidth="2"
-                            
                             onMouseEnter={(e) => {
                                 setHoverSegment(segment.id);
                                 setTooltipPos({ x: e.clientX, y: e.clientY - 20 });

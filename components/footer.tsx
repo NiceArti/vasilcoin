@@ -39,7 +39,7 @@ export function Footer() {
                 {t('description')}
             </p>
             
-            <StyledLink className="mx-auto mt-8 px-8 text-base my-4 py-4 w-full max-w-[600px] md:text-[18px] lg:text-[28px]">
+            <StyledLink className="mx-auto mt-8 px-0 text-base my-4 py-4 w-full max-w-[600px] md:text-[18px] lg:text-[28px]">
                 <LuMousePointerClick className="scale-x-[-1] text-[23px] md:text-[30px] lg:text-[40px]" />
                 {t('linktree')}
             </StyledLink>
