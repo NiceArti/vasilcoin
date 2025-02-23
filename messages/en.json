@@ -12,22 +12,22 @@
 	},
 	"AboutSection": {
 		"title": "About VASILCOIN",
-		"description": "It's not just a memcoin in [b class='text-black']blockchain TON[/b] it is a symbol of joy, kindness and style. It was created to inspire, unite people and make the world brighter and happier."
+		"description": "[b class='text-black']VASILCOIN[/b] is more than just a [b class='text-black']TON blockchain[/b] meme coin: it’s a symbol of joy, kindness, and style. Created to inspire, unite people, and make the world brighter and much happier. Join us to became a happy society!"
 	},
 	"ValuesSection": {
 		"title": "Values of[br]VASILCOIN",
 		"values": {
 			"0": {
 				"title": "Kindness",
-				"description": "VASILCOIN makes the world a kinder place."
+				"description": "Every VASILCOIN makes the world a bit better."
 			},
 			"1": {
 				"title": "Style",
-				"description": "VASILCOIN is the art of being yourself."
+				"description": "Style is the art of being yourself."
 			},
 			"2": {
 				"title": "Smiles",
-				"description": "This is our main currency."
+				"description": "A smile is our greatest currency."
 			}
 		}
 	},
@@ -46,16 +46,16 @@
 		"title": "How to use[br]VASILCOIN",
 		"card": {
 			"0": {
-				"title": "The coin brings style",
-				"description": "You could be the owner of the most fashionable accessories that shine like your smile!"
+				"title": "Imagine it brings style",
+				"description": "You could own the trendiest accessories shining as brightly as your smile."
 			},
 			"1": {
-				"title": "Spread the good",
-				"description": "Your coins could turn into good deeds that change the world."
+				"title": "It spreads kindness",
+				"description": "Your coins could turn into acts of kindness that change the world."
 			},
 			"2": {
-				"title": "A smile has value",
-				"description": "Your smile becomes a real wealth, and VASILCOIN enhances it!"
+				"title": "Every smile has value",
+				"description": "Picture your smile becoming real wealth, with VASILCOIN amplifying its brightness!"
 			}
 		}
 	},
@@ -90,48 +90,48 @@
 	},
 	"PartnersSection": {
 		"title": "Partners who will emerge[br]thanks to VASILCOIN",
-		"description": "Your trust in VASILCOIN inspires you to create partnerships that will bring kindness, style and joy.",
+		"description": "Your trust inVASILCOIN inspires partnerships that will bring joy, style, and kindness to every corner of the world!",
 		"data": {
 			"0": {
-				"title": "The House of Joy",
+				"title": "House of Joy",
 				"description": "A fashion house that creates the art of style."
 			},
 			"1": {
-				"title": "Shining Hearts",
-				"description": "The Foundation for helping those in need with kindness and a smile."
+				"title": "Radiant Hearts",
+				"description": "A charity fund using Vasilcoin to help those in need."
 			},
 			"2": {
 				"title": "The Puppy Shop",
-				"description": "A place of true happiness from cuddling with pets."
+				"description": "A place where happiness the form of adorable pets."
 			},
 			"3": {
 				"title": "Gorgeous scarves",
 				"description": "A brand of elegant accessories and fashionistas."
 			},
 			"4": {
-				"title": "The Rich People's Fund",
-				"description": "We inspire rich people to do good deeds."
+				"title": "Wealth Support Fund",
+				"description": "A unique initiative inspiring the wealthy to do good with style."
 			},
 			"5": {
-				"title": "Shining Studio",
-				"description": "Provides unique decorations for joy."
+				"title": "Shining Accessories Studio",
+				"description": "A brand creating unique jewelry to highlight individuality."
 			},
 			"6": {
 				"title": "Happiness Exchange",
-				"description": "A place to exchange kindness and good mood."
+				"description": "A platform for trading Vasilcoin for joy and style."
 			},
 			"7": {
-				"title": "The Scarf Exchange",
-				"description": "A platform for fashionable and shining shopping."
+				"title": "Scarf Exchange",
+				"description": "A platform where trendy can be purchased with Vasilcoin."
 			},
 			"8": {
-				"title": "A corner of paradise",
-				"description": "The resort is for those who appreciate style and comfort."
+				"title": "Paradise Retreat Spot",
+				"description": "A luxury resort where you can pay for with Vasilcoin."
 			}
 		}
 	},
 	"FooterSection": {
-		"description": "Join the #VASILCOIN movement and help the world become brighter, kinder and stronger!",
+		"description": "Join the #VASILCOIN movement and help make the world brighter, kinder, and more stylish!",
 		"copyright": "All rights reserved.",
 		"linktree": "Together for a smile with #VASILCOIN!"
 	}
