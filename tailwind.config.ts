@@ -59,6 +59,7 @@ export default {
 			backgroundImage: {
 				"emoji-tiled": "url('/background/emoji-tiled.png')",
 				"dots-tiled": "url('/background/dots-tiled.png')",
+				"dots-tiled-2": "url('/background/dots-tiled-2.png')",
 			},
 		}
 	},

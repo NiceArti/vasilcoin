@@ -26,7 +26,7 @@ export function HeroSection() {
             className="border-b-0 sm:border-b-0"
             classNameInner="flex flex-col gap-3"
         >
-            <Header className="mt-8 mb-6" />
+            <Header className="mt-8 mb-6 max-w-[1000px] mx-auto" />
             
             <Image className="hidden md:block" {...CloudGroup} alt="Funny clouds" quality={100} />
             <Image {...VasilcoinText} className="mx-auto h-[60px] w-[288px] md:mx-0 md:w-auto md:h-auto max-h-28 max-w-[520px]" alt="VASILCOIN" quality={100} />

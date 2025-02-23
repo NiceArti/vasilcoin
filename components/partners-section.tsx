@@ -9,33 +9,28 @@ import Scarf from '@/public/scarf.png';
 import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
 import { Title } from "./ui/title";
+import { Section } from "./ui/section";
 
 export function PartnersSection() {
-    return (
-        <section className="w-full pt-[40px] bg-dots-tiled bg-repeat relative border-b-2 md:border-b-4 border-black overflow-x-clip">
-            <Mobile />
-            <PC />
-        </section>
-    );
-}
-
-function Mobile() {
     const t = useTranslations('PartnersSection');
-
     return (
-        <div className="md:hidden">
-            <Title className="text-center">
-                <BBCodeRenderer text={t('title-mobile')} />
+        <Section
+            className="bg-dots-tiled bg-repeat"
+            classNameInner="flex flex-col gap-6 pt-10 px-0 pb-16 md:py-24 md:px-4"
+        >
+            <Title className="text-center px-4">
+                <BBCodeRenderer text={t('title')} />
             </Title>
 
-            <p className="mt-5 text-base text-center mx-auto max-w-[320px] z-20">
+            <p className="text-base text-center px-4 mx-auto md:max-w-[800px] md:text-[22px] md:leading-9">
                 {t('description')}
             </p>
 
-            <Carousel>
-                <CarouselContent className="min-w-[300px] max-w-[320px] w-[60%] mx-auto mt-[44px] mb-[60px]">
+            {/* Mobile cards */}
+            <Carousel className="mt-[20px] select-none md:hidden">
+                <CarouselContent className="min-w-[300px] max-w-[320px] w-[60%] mx-auto mb-1">
                     {[...Array(3)].map((_, i) => (
-                        <CarouselItem key={i} className="flex flex-col gap-5">
+                        <CarouselItem key={i} className="flex flex-col gap-5 pointer-events-none">
                             <Card
                                 title={t(`data.${i * 3}.title`)}
                                 description={t(`data.${i * 3}.description`)}
@@ -53,36 +48,8 @@ function Mobile() {
                 </CarouselContent>
             </Carousel>
 
-            <Image
-                {...Scarf}
-                alt="Scarf"
-                className="absolute w-[160px] -left-[20px] -bottom-[50px]"
-            />
-            <Image
-                {...LipriconBoot}
-                alt="LipriconBoot"
-                className="absolute w-[232px] -right-[80px] -top-[20px]"
-            />
-        </div>
-    );
-}
-
-
-function PC() {
-    const t = useTranslations('PartnersSection');
-
-    return (
-        <div className="relative hidden md:block max-w-7xl w-full mx-auto top-[50px]">
-            <Title className="text-center">
-                <BBCodeRenderer text={t('title-pc')} />
-            </Title>
-
-            <p className="mt-5 text-[24px] lg:text-[28px] text-center mx-auto max-w-[950px] w-[80%] z-20">
-                {t('description')}
-            </p>
-
-
-            <div className="inline-flex gap-5 justify-center w-full mt-[70px] mb-[140px]">
+            {/* PC Cards */}
+            <div className="gap-5 justify-center w-full mt-[20px] hidden md:inline-flex">
                 {[...Array(3)].map((_, i) => (
                     <div key={i} className="flex flex-col gap-5">
                         <Card
@@ -100,20 +67,22 @@ function PC() {
                     </div>
                 ))}
             </div>
-
+            
+            {/* Images */}
             <Image
                 {...Scarf}
                 alt="Scarf"
-                className="absolute w-[220px] -left-[40px] top-0"
+                className="absolute w-[160px] -left-[20px] -bottom-[50px] md:w-[220px] md:-left-[40px] md:top-[100px]"
             />
             <Image
                 {...LipriconBoot}
                 alt="LipriconBoot"
-                className="absolute w-[350px] -right-[120px] top-[80px]"
+                className="absolute w-[232px] -right-[80px] -top-[20px] md:w-[350px] md:-right-[120px] md:top-[80px]"
             />
-        </div>
+        </Section>
     );
 }
+
 
 function Card({
     title,

@@ -1,20 +1,23 @@
 import React from "react";
-import { cn } from "@/lib/utils"; // Если нет, замени на clsx или classnames
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
-export const Button = React.forwardRef<
-    HTMLButtonElement,
-    React.ComponentPropsWithoutRef<"button">
->(({ className, children, ...props }, ref) => {
+export const StyledLink = React.forwardRef<
+    HTMLLinkElement,
+    React.ComponentPropsWithoutRef<"a">
+>(({ className, href, children, ...props }, ref) => {
     return (
-        <button
-            ref={ref}
+        <Link
+            href={href || '#'}
             className={cn(
-                "h-[72px] px-12 rounded-full bg-[#FBAC01] border border-black shadow-[3px_3px_0px_black] hover: bg - [#fb8f01] font - bold text - [22px] text-black transition-all duration-200 active:scale-95",
+                "inline-flex items-center justify-center gap-3 px-4 py-3 w-max whitespace-nowrap text-base font-bold rounded-full bg-primary border border-black shadow-[3px_3px_0px_black] transition-colors hover:bg-accent hover:text-accent-foreground",
                 className
             )}
             {...props}
         >
             {children}
-        </button>
+        </Link>
     );
 });
+
+StyledLink.displayName = "StyledLink"

@@ -33,7 +33,7 @@
 	},
 	"ListingSection": {
 		"title": "До листинга осталось:",
-		"description": "Не пропустите возможность стать частью[br]движения #VASILCOIN!",
+		"description": "Не пропустите возможность стать частью движения #VASILCOIN!",
 		"join": "Залетай",
 		"time-units": {
 			"days": "Дни",
@@ -89,8 +89,7 @@
 		}
 	},
 	"PartnersSection": {
-		"title-mobile": "Партнеры от[br]VASILCOIN",
-		"title-pc": "Партнеры, которые[br]появятся для VASILCOIN",
+		"title": "Партнеры, которые[br]появятся для VASILCOIN",
 		"description": "Ваше доверие к VASILCOIN вдохновляет на создание партнёрств, которые принесут добро, стиль и радость",
 		"data": {
 			"0": {

@@ -9,16 +9,19 @@ import ManagementIcon from '@/public/managment-icon.png';
 import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
 import { Title } from "./ui/title";
+import { Section } from "./ui/section";
 
 export function HowToUse() {
     const t = useTranslations('HowToUseSection');
     return (
-        <section className="w-full mx-auto py-10 px-7 flex flex-col gap-3 border-b-2 md:border-b-4 md:pb-[100px] border-black">
-            <Title className="text-center mb-8 md:mb-0">
+        <Section
+            classNameInner="flex flex-col gap-8 pt-10 pb-14 md:gap-16 md:pt-20 md:pb-28"
+        >
+            <Title className="text-center ">
                 <BBCodeRenderer text={t('title')} />
             </Title>
 
-            <div className="flex flex-col gap-8 justify-center mx-auto lg:flex-row">
+            <div className="flex flex-col gap-8 justify-center items-center lg:flex-row lg:items-stretch">
                 {[
                     { logo: ManagementIcon, title: t('card.0.title'), description: t('card.0.description') },
                     { logo: SupportIcon, title: t('card.1.title'), description: t('card.1.description') },
@@ -33,7 +36,7 @@ export function HowToUse() {
                     />
                 ))}
             </div>
-        </section>
+        </Section>
     );
 }
 
@@ -53,12 +56,12 @@ function Card({
         <div className={cn("border border-black shadow-[3px_3px_0px_black] bg-[#FFF7D5] font-bold text-base gap-3 p-8 rounded-3xl", className)}>
             <Image
                 {...logo}
-                className="w-[80px] mx-auto"
+                className="w-[64px] mx-auto md:w-[80px]"
                 alt="Card Logo"
             />
 
-            <h1 className="font-bold text-[28px] text-center mt-8">{title}</h1>
-            <p className="text-center mt-5 text-[#5A5C57] text-[22px] font-normal">{description}</p>
+            <h1 className="font-bold text-[22px] text-center mt-8 md:text-[28px]">{title}</h1>
+            <p className="text-center mt-5 text-[#5A5C57] text-base font-normal md:text-[22px]">{description}</p>
         </div>
     );
 }

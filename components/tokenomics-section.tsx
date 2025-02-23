@@ -7,18 +7,23 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
 import { Title } from "./ui/title";
+import { Section } from "./ui/section";
 
 export function TokenomicsSection() {
     const t = useTranslations('TokenomicsSection');
 
     return (
-        <section id="tokenomics" className="w-full pt-[40px] relative border-b-2 md:border-b-4 border-black overflow-x-clip bg-[#FEFCE2]">
+        <Section
+            id="tokenomics"
+            className="bg-white"
+            classNameInner="pt-[40px]"
+        >
             <Title className="text-center">
                 <BBCodeRenderer text={t('title')} />
             </Title>
             
             <StylizedDonutChart />
-        </section>
+        </Section>
     );
 }
 

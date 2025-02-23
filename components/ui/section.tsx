@@ -8,10 +8,10 @@ export const Section = React.forwardRef<
     return (
         <section
             ref={ref}
-            className={cn("w-full border-b-2 border-black sm:border-b-4", className)}
+            className={cn("w-full border-b-2 border-black sm:border-b-4 overflow-x-clip", className)}
             {...props}
         >
-            <div className={cn("relative mx-auto max-w-7xl px-4 overflow-x-clip lg:overflow-x-visible", classNameInner)}>
+            <div className={cn("relative mx-auto max-w-7xl px-7 lg:overflow-x-visible", classNameInner)}>
                 {children}
             </div>
         </section>

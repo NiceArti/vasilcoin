@@ -33,7 +33,7 @@
 	},
 	"ListingSection": {
 		"title": "The listing will start in:",
-		"description": "Don't miss the opportunity to become a part[br]of the #VASILCOIN movement!",
+		"description": "Don't miss the opportunity to become a part of the #VASILCOIN movement!",
 		"join": "Join",
 		"time-units": {
 			"days": "Days",
@@ -89,8 +89,7 @@
 		}
 	},
 	"PartnersSection": {
-		"title-mobile": "Partners from[br]VASILCOIN",
-		"title-pc": "Partners who[br]will appear for VASILCOIN",
+		"title": "Partners who will emerge[br]thanks to VASILCOIN",
 		"description": "Your trust in VASILCOIN inspires you to create partnerships that will bring kindness, style and joy.",
 		"data": {
 			"0": {
