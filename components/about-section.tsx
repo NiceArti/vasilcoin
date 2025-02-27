@@ -21,12 +21,15 @@ export function AboutSection() {
             className="bg-emoji-tiled bg-repeat"
             classNameInner="pt-[60px] pb-[100px] md:pb-[200px]"
         >
-            <Title className="text-center mb-5 md:mb-0">
+            <Title className="hidden text-center mb-5 md:block md:mb-0">
                 {t("title")}
             </Title>
 
             <div className="relative mt-[200px] mx-auto max-w-[960px] w-full bg-white flex flex-col gap-8 md:top-[20%]">
                 <div className="flex flex-col gap-4 relative z-10 max-w-[700px] mx-auto pt-3 px-6 sm:w-[80%] sm:gap-8 md:pt-6">
+                    <Title className="text-center md:hidden">
+                        {t("title")}
+                    </Title>
                     <p className="text-center text-[#5A5C57] text-base sm:text-lg md:text-[28px] md:leading-10 lg:w-full">
                         <BBCodeRenderer text={t("description")} />
                     </p>
