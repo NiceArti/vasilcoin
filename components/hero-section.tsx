@@ -25,7 +25,7 @@ export function HeroSection() {
     return (
         <Section
             className="border-b-0 sm:border-b-0"
-            classNameInner="flex flex-col gap-3 min-h-[calc(100dvh-108px)] md:min-h-0"
+            classNameInner="flex flex-col gap-3 min-h-[calc(100vh-108px)] md:min-h-0"
         >
             <Header className="mt-8 mb-6 max-w-[1000px] mx-auto" />
             
@@ -36,7 +36,7 @@ export function HeroSection() {
                 <Image {...VasilcoinText} className="h-[60px] w-[288px] md:mx-0 md:w-auto md:h-auto max-h-28 max-w-[520px]" alt="VASILCOIN" quality={100} />
             </div>
             <div className="flex flex-col justify-center font-semibold mt-4 md:gap-4 md:justify-start">
-                <p className="mx-auto text-lg md:mx-0 md:text-3xl md:leading-[52px] lg:text-[36px]">
+                <p className="mx-auto text-lg md:mx-0 md:text-3xl md:leading-[52px] md:max-w-[700px] lg:text-[36px]">
                     <BBCodeRenderer text={t('description')} />
                 </p>
             </div>
@@ -48,14 +48,12 @@ export function HeroSection() {
                 {t('join-community')}
             </Button>
 
-
             <div className="w-full max-w-[775px] mt-12 justify-between items-center bg-white rounded-full border-2 border-black pl-8 py-3 pr-3 h-20 shadow-[3px_3px_0px_black] hidden md:inline-flex">
                 <span className="text-[18px] font-semibold md:max-w-[521px] truncate">
                     {address}
                 </span>
                 <CopyButton text={t('copy')} copyText={address} className="text-[22px] gap-4" />
             </div>
-
 
             <ImageGroup />
         </Section>
