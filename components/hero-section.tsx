@@ -6,12 +6,13 @@ import { useTranslations } from "next-intl";
 import { Button } from "./ui/button";
 import { CopyButton } from "./copy-button";
 
-import VortexAsset from '@/public/vortex.png';
+import VortexAsset from '@/public/vortex-purple.png';
 import TonCoinGroup from '@/public/toncoin-group.png';
 import VasilencoAsset from '@/public/vasilenco.png';
+import VasilcoinTokenAsset from '@/public/brand/vasilcoin-token.png';
 import CloudGroup from '@/public/clouds-group.png';
 import VasilcoinText from '@/public/vasilcoin-text.png';
-import DogAsset from '@/public/dog.png';
+import RedCarAsset from '@/public/red-car.png';
 import { BBCodeRenderer } from "@/components/ui/code-renderer";
 import { Section } from "./ui/section";
 import { Header } from "./header";
@@ -24,21 +25,25 @@ export function HeroSection() {
     return (
         <Section
             className="border-b-0 sm:border-b-0"
-            classNameInner="flex flex-col gap-3"
+            classNameInner="flex flex-col gap-3 min-h-[calc(100dvh-108px)] md:min-h-0"
         >
             <Header className="mt-8 mb-6 max-w-[1000px] mx-auto" />
             
-            <Image className="hidden md:block" {...CloudGroup} alt="Funny clouds" quality={100} />
-            <Image {...VasilcoinText} className="mx-auto h-[60px] w-[288px] md:mx-0 md:w-auto md:h-auto max-h-28 max-w-[520px]" alt="VASILCOIN" quality={100} />
-            <div className="hidden md:flex flex-col gap-4">
-                <p className="font-semibold text-3xl lg:text-5xl leading-[52px]">
+            <Image className="hidden animate-ping-pong md:block" {...CloudGroup} alt="Funny clouds" quality={100} />
+
+            <div className="inline-flex gap-3 items-center justify-center mt-3 md:justify-start">
+                <Image {...VasilcoinTokenAsset} className="aspect-square w-[50px]" alt="VASILCOIN" quality={100} />
+                <Image {...VasilcoinText} className="h-[60px] w-[288px] md:mx-0 md:w-auto md:h-auto max-h-28 max-w-[520px]" alt="VASILCOIN" quality={100} />
+            </div>
+            <div className="flex flex-col justify-center mt-4 md:gap-4 md:justify-start">
+                <p className="mx-auto font-semibold text-lg md:mx-0 md:text-3xl md:leading-[52px] lg:text-[36px]">
                     <BBCodeRenderer text={t('description')} />
                 </p>
             </div>
 
             <Button
                 variant={'outline'}
-                className="mx-auto w-[90%] py-7 text-[22px] mt-44 md:mt-12 md:mx-0 md:w-max md:py-8 md:px-10 lg:py-10 lg:text-[28px]"
+                className="absolute bottom-0 mx-auto w-[90%] py-7 text-[22px] md:static md:mt-12 md:mx-0 md:w-max md:py-8 md:px-10 lg:py-10 lg:text-[28px]"
             >
                 {t('join-community')}
             </Button>
@@ -62,24 +67,24 @@ function ImageGroup() {
     return (
         <div className="absolute w-full h-full -z-10 overflow-x-clip xl:overflow-visible left-0 md:mt-16">
             <Image
-                className="absolute min-w-[700px] md:w-[1070px] -top-[300px] -right-[250px] md:-top-[400px] md:-right-40"
+                className="absolute animate-rotate-counterclockwise min-w-[1000px] -bottom-[280px] -right-[350px] md:min-w-[1500px] md:-right-[700px] xl:-right-[500px]"
                 {...VortexAsset}
                 alt="Vortex.png"
             />
             <Image
-                className="absolute min-w-[604px] sm:w-[1036px] -bottom-10 md:bottom-0 -right-[200px] lg:-right-20"
+                className="absolute animate-slide-in-left bottom-[100px] left-[-100px] -rotate-[20deg] scale-x-[-1] min-w-[330px] max-w-[330px] md:hidden"
+                {...RedCarAsset}
+                alt="RedCar.png"
+            />
+            <Image
+                className="absolute animate-slide-in-right min-w-[500px] max-w-[500px] -right-[100px] -bottom-10 md:bottom-0 md:min-w-[1036px] md:max-w-[1036px] md:-right-[500px] xl:-right-[300px]"
                 {...VasilencoAsset}
                 alt="Vasilenco.png"
             />
             <Image
-                className=" absolute -z-10 -right-0 md:z-0 md:right-[50px] md:-top-[100px]"
+                className="saturate-150 animate-slide-in-right -hue-rotate-[5deg] absolute -right-[100px] bottom-[120px] min-w-[500px] max-w-[500px] md:min-w-[800px] md:max-w-[800px] md:bottom-[350px] md:-right-[350px] xl:-right-[150px]"
                 {...TonCoinGroup}
                 alt="TonCoinGroup.png"
-            />
-            <Image
-                className="absolute w-[170px] -left-5 top-[150px] md:w-[300px] md:top-[340px] md:left-[430px]"
-                {...DogAsset}
-                alt="DogAsset.png"
             />
         </div>
     );

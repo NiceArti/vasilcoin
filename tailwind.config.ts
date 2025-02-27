@@ -61,6 +61,40 @@ export default {
 				"dots-tiled": "url('/background/dots-tiled.png')",
 				"dots-tiled-2": "url('/background/dots-tiled-2.png')",
 			},
+			keyframes: {
+				"slide-in-left": {
+					"0%": { translate: "-200px", opacity: "0" },
+					"80%": { translate: "0", opacity: "1" },
+				},
+				"slide-in-right": {
+					"0%": { translate: "200px", opacity: "0" },
+					"80%": { translate: "0", opacity: "1" },
+				},
+				"rotate-clockwise": {
+					"0%": { transform: "rotate(0deg)" },
+					"100%": { transform: "rotate(360deg)" },
+				},
+				"rotate-counterclockwise": {
+					"0%": { transform: "rotate(0deg)" },
+					"100%": { transform: "rotate(-360deg)" },
+				},
+				pingPong: {
+					'0%, 100%': { transform: 'translateX(-10px)' },
+					'50%': { transform: 'translateX(10px)' },
+				},
+			},
+			animation: {
+				"slide-in-left": "slide-in-left 2s cubic-bezier(0.25, 1, 0.5, 1) forwards",
+				"slide-in-right": "slide-in-right 3s cubic-bezier(0.25, 1, 0.5, 1) forwards",
+				"rotate-clockwise": "rotate-clockwise 90s linear infinite",
+				"rotate-counterclockwise": "rotate-counterclockwise 90s linear infinite",
+				'ping-pong': 'pingPong 5s ease-in-out infinite',
+			},
+			duration: {
+				3000: "3000ms",
+				5000: "5000ms",
+				10000: "10000ms",
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],

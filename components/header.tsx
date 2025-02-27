@@ -4,7 +4,6 @@
 import React, { useEffect, useState, useTransition } from "react";
 import { motion } from "framer-motion";
 import { cn, scrollToId } from "@/lib/utils";
-import Image from "next/image";
 import { CopyButton } from "./copy-button";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
@@ -23,15 +22,8 @@ export function Header({ className }: { className?: string }) {
                 copyText="EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf"
                 className="max-w-40 h-full sm:hidden"
             />
-
-            <Image
-                className="h-12 hidden sm:block"
-                src={'/logo.png'}
-                width={192}
-                height={47}
-                quality={100}
-                alt="logo"
-            />
+            {/* Dummy object. Thanks to designers */}
+            <div className="hidden sm:block w-[100px] h-full" />
             
             <div className="hidden sm:inline-flex gap-3">
                 <Button
