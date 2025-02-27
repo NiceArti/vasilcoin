@@ -363,12 +363,18 @@ function lightenHexColor(hex: string, percent: number): string {
 
 const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) => {
     return (
-        <svg className={cn('w-[120px] h-[40px]', className)}
+        <svg className={cn('w-[120px] h-[40px] overflow-hidden', className)}
             viewBox="0 0 119 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <foreignObject x="-105.45" y="-105.389" width="329.841" height="250.861">
+            <foreignObject
+                x="-105.45"
+                y="-105.389"
+                width="329.841"
+                height="250.861"
+                preserveAspectRatio="none"
+            >
                 <div
                     // @ts-ignore
                     xmlns="http://www.w3.org/1999/xhtml" 
