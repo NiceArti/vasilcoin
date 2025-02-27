@@ -368,13 +368,13 @@ const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) 
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
-            <foreignObject x="-105.45" y="-105.389" width="329.841" height="250.861">
+            <foreignObject xmlns="http://www.w3.org/1999/xhtml" x="-105.45" y="-105.389" width="329.841" height="250.861">
                 <div className="w-full h-full"
                     style={{
                         backdropFilter: 'blur(53.08px)',
                         clipPath: `url(#bgblur_0_8_12964_clip_path)`,
                     }}
-                ></div>
+                />
             </foreignObject>
             <g data-figma-bg-blur-radius="106.154">
                 <mask id="path-1-inside-1_8_12964" fill="white">
