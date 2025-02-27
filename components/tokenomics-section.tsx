@@ -364,29 +364,29 @@ function lightenHexColor(hex: string, percent: number): string {
 const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) => {
     const formPath = 'M2.82446 3.13197C0.703857 5.35158 0.703857 8.85304 0.703857 15.856C0.703857 22.8589 0.703857 26.3603 2.82446 28.58C2.90489 28.6641 2.98723 28.7465 3.07142 28.8269C5.29103 30.9475 8.79249 30.9475 15.7954 30.9475H51.1965C51.949 30.9475 52.3252 30.9475 52.6488 31.1096C52.9725 31.2716 53.1979 31.5728 53.6487 32.1753L57.3083 37.0656C58.4319 38.5672 58.9938 39.3179 59.7605 39.3179C60.5272 39.3179 61.089 38.5672 62.2127 37.0656L65.8722 32.1753C66.3231 31.5728 66.5485 31.2716 66.8721 31.1096C67.1958 30.9475 67.572 30.9475 68.3244 30.9475H103.145C110.148 30.9475 113.65 30.9475 115.869 28.8269C115.953 28.7465 116.036 28.6641 116.116 28.58C118.237 26.3603 118.237 22.8589 118.237 15.856C118.237 8.85304 118.237 5.35158 116.116 3.13197C116.036 3.04778 115.953 2.96544 115.869 2.885C113.65 0.764404 110.148 0.764404 103.145 0.764404H15.7954C8.79249 0.764404 5.29103 0.764404 3.07142 2.885C2.98723 2.96544 2.90489 3.04778 2.82446 3.13197Z'
     return (
-        <svg className={cn('w-[120px] h-[40px] overflow-hidden', className)}
+        <svg className={cn('relative w-[120px] h-[40px] overflow-hidden', className)}
             viewBox="0 0 119 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
         >
             <foreignObject
-                x="-105.45"
-                y="-105.389"
-                width="329.841"
-                height="250.861"
+                x="-105"
+                y="-105"
+                width="329"
+                height="250"
                 preserveAspectRatio="none"
             >
                 <div
                     // @ts-ignore
                     xmlns="http://www.w3.org/1999/xhtml" 
-                    className="w-full h-full"
+                    className="absolute w-full h-full"
                     style={{
                         backdropFilter: 'blur(54px)',
                         clipPath: 'url("#bgblur_clip_path")',
                     }}
                 />
             </foreignObject>
-            <g data-figma-bg-blur-radius="106.154">
+            <g>
                 <mask id="path-1-inside" fill="white">
                     <path
                         fillRule="evenodd"
@@ -410,7 +410,7 @@ const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) 
             <defs>
                 <clipPath id="bgblur_clip_path">
                     <path
-                        transform="translate(105.45 105.389)"
+                        transform="translate(105 105)"
                         fillRule="evenodd"
                         clipRule="evenodd"
                         d={formPath}
