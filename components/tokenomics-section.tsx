@@ -370,16 +370,7 @@ const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) 
             xmlns="http://www.w3.org/2000/svg"
         >
             <g>
-                <mask fill="white">
-                    <path
-                        // fillRule="evenodd"
-                        // clipRule="evenodd"
-                        d={formPath}
-                    />
-                </mask>
                 <path
-                    // fillRule="evenodd"
-                    // clipRule="evenodd"
                     d={formPath}
                     fill={fillColor || 'white'}
                     fillOpacity="1"
