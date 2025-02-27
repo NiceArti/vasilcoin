@@ -4,7 +4,6 @@ import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 
 import Vortex from '@/public/vortex.png';
-import ToncoinGroup from '@/public/toncoin-group.png';
 import EmojiIcon from '@/public/emoji-icon.png';
 import SupportIcon from '@/public/support-icon.png';
 import ManagementIcon from '@/public/managment-icon.png';
@@ -23,18 +22,26 @@ export function ValuesSection() {
     return (
         <Section
             id="values"
-            className="overflow-x-clip overflow-y-clip flex"
-            classNameInner="md:inline-flex md:justify-between py-8 md:py-0 md:pt-8 md:pb-20 w-full w-max-6xl"
+            className="overflow-x-clip overflow-y-clip flex bg-[#FDE79A]"
+            classNameInner="md:inline-flex md:justify-around py-8 md:py-0 md:pt-8 md:pb-20 w-full w-max-6xl"
         >
-            <div className="relative w-[490px] pb-2">
+            <div className="absolute animate-rotate-counterclockwise w-full h-full md:animate-none">
+                <Image
+                    {...Vortex}
+                    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[1000px] md:min-w-[1500px] md:max-w-[1500px] md:-left-[280px] md:-top-[620px] md:animate-rotate-counterclockwise"
+                    alt="Vortex"
+                />
+            </div>
+
+            <div className="hidden relative mt-40 pb-2 w-[190px] md:block">
                 <Image
                     {...Vasilenco}
-                    className="absolute w-full max-w-[600px] min-w-[490px] hidden md:block"
+                    className="absolute w-full max-w-[600px] min-w-[490px] md:-bottom-[120px]"
                     alt="Vasilenco"
                 />
             </div>
 
-            <div className="flex flex-col gap-6 md:max-w-[388px]">
+            <div className="flex flex-col gap-6 md:max-w-[400px] relative">
                 <Title className="text-center top-8 md:text-right">
                     <BBCodeRenderer text={t('title')} />
                 </Title>
@@ -49,6 +56,7 @@ export function ValuesSection() {
                     description={t('values.1.description')}
                     logo={ManagementIcon}
                     logoCloud={Cloud1}
+                    classNameText="max-w-[230px]"
                 />
                 <Card
                     title={t('values.2.title')}
@@ -58,16 +66,13 @@ export function ValuesSection() {
                 />
             </div>
 
-            <Image
-                {...Vortex}
-                className="absolute -z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[1000px] md:left-[300px] md:top-[120px]"
-                alt="Vortex"
-            />
-            <Image
-                {...ToncoinGroup}
-                className="absolute max-w-[600px] -z-20 left-1/2 top-0 -translate-x-1/2 md:left-[280px]"
-                alt="Toncoin Group"
-            />
+            <div className="relative mt-[280px] w-full pb-2 md:hidden">
+                <Image
+                    {...Vasilenco}
+                    className="absolute -bottom-[500px] left-1/2 -translate-x-1/2 w-full max-w-[500px] min-w-[490px]"
+                    alt="Vasilenco"
+                />
+            </div>
         </Section>
     );
 }
@@ -91,21 +96,22 @@ function Card({
     return (
         <div className={cn("relative inline-flex items-center text-base gap-6 p-8 justify-center max-w-[435px] mx-auto", className)}>
             <Image
+                {...logoCloud}
+                className="absolute left-1/2 -translate-x-1/2 w-full min-w-[260px] max-w-[410px]"
+                alt="Cloud"
+            />
+
+            <Image
                 {...logo}
-                className="w-[50px]"
+                className="relative w-[50px]"
                 alt="Card Logo"
             />
 
-            <p className={cn("text-[#5A5C57] text-[18px] font-normal min-w-[240px] max-w-[250px]", classNameText)}>
+            <p className={cn("relative text-[#5A5C57] text-[18px] font-normal min-w-[240px] max-w-[250px]", classNameText)}>
                 <span className="font-bold text-black">{title}: </span>
                 {description}
             </p>
 
-            <Image
-                {...logoCloud}
-                className="absolute -z-10 left-1/2 -translate-x-1/2 w-full min-w-[260px] max-w-[410px]"
-                alt="Cloud"
-            />
         </div>
     );
 }
