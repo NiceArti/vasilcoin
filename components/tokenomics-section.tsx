@@ -25,7 +25,7 @@ export function TokenomicsSection() {
             <Title className="relative text-center">
                 <BBCodeRenderer text={t('title')} />
             </Title>
-            
+
             <StylizedDonutChart />
         </Section>
     );
@@ -154,11 +154,12 @@ const StylizedDonutChart = () => {
                     className="size-[350px] md:size-[500px] xl:size-[600px]"
                     viewBox="0 0 300 300"
                 >
+                    {/* Тень для сегментов */}
                     <defs>
-    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
-      <feDropShadow dx="2" dy="2" stdDeviation="0" floodColor="rgba(0, 0, 0, 1)" />
-    </filter>
-  </defs>
+                        <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+                            <feDropShadow dx="2" dy="2" stdDeviation="0" floodColor="rgba(0, 0, 0, 1)" />
+                        </filter>
+                    </defs>
                     {/* Сегменты */}
                     {segments.map(segment => (
                         <g key={segment.id}>
@@ -181,7 +182,6 @@ const StylizedDonutChart = () => {
                                 style={{
                                     transform: hoverSegment === segment.id ? "scale(1.08)" : "scale(1)",
                                     transformOrigin: `${centerX}px ${centerY}px`,
-                                    // filter: "drop-shadow(2px 2px 0px rgba(0, 0, 0, 1))",
                                 }}
                                 filter="url(#dropShadow)"
                             />
@@ -366,8 +366,7 @@ function lightenHexColor(hex: string, percent: number): string {
 //     );
 // };
 
-const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) => {
-    const formPath = 'M2.82446 3.13197C0.703857 5.35158 0.703857 8.85304 0.703857 15.856C0.703857 22.8589 0.703857 26.3603 2.82446 28.58C2.90489 28.6641 2.98723 28.7465 3.07142 28.8269C5.29103 30.9475 8.79249 30.9475 15.7954 30.9475H51.1965C51.949 30.9475 52.3252 30.9475 52.6488 31.1096C52.9725 31.2716 53.1979 31.5728 53.6487 32.1753L57.3083 37.0656C58.4319 38.5672 58.9938 39.3179 59.7605 39.3179C60.5272 39.3179 61.089 38.5672 62.2127 37.0656L65.8722 32.1753C66.3231 31.5728 66.5485 31.2716 66.8721 31.1096C67.1958 30.9475 67.572 30.9475 68.3244 30.9475H103.145C110.148 30.9475 113.65 30.9475 115.869 28.8269C115.953 28.7465 116.036 28.6641 116.116 28.58C118.237 26.3603 118.237 22.8589 118.237 15.856C118.237 8.85304 118.237 5.35158 116.116 3.13197C116.036 3.04778 115.953 2.96544 115.869 2.885C113.65 0.764404 110.148 0.764404 103.145 0.764404H15.7954C8.79249 0.764404 5.29103 0.764404 3.07142 2.885C2.98723 2.96544 2.90489 3.04778 2.82446 3.13197Z'
+const PopUp = ({ fillColor, className }: { fillColor?: string, className?: string }) => {
     return (
         <svg className={cn('w-[120px] h-[40px]', className)}
             viewBox="0 0 119 40"
@@ -376,7 +375,30 @@ const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) 
         >
             <g>
                 <path
-                    d={formPath}
+                    d="M2.82 3.13
+                    C0.70 5.35 0.70 8.85 0.70 15.86
+                    C0.70 22.86 0.70 26.36 2.82 28.58
+                    C2.90 28.66 2.99 28.75 3.07 28.83
+                    C5.29 30.95 8.79 30.95 15.80 30.95
+                    H51.20
+                    C51.95 30.95 52.33 30.95 52.65 31.11
+                    C52.97 31.27 53.20 31.57 53.65 32.18
+                    L57.31 37.07
+                    C58.43 38.57 58.99 39.32 59.76 39.32
+                    C60.53 39.32 61.09 38.57 62.21 37.07
+                    L65.87 32.18
+                    C66.32 31.57 66.55 31.27 66.87 31.11
+                    C67.20 30.95 67.57 30.95 68.32 30.95
+                    H103.15
+                    C110.15 30.95 113.65 30.95 115.87 28.83
+                    C115.95 28.75 116.04 28.66 116.12 28.58
+                    C118.24 26.36 118.24 22.86 118.24 15.86
+                    C118.24 8.85 118.24 5.35 116.12 3.13
+                    C116.04 3.05 115.95 2.97 115.87 2.89
+                    C113.65 0.76 110.15 0.76 103.15 0.76
+                    H15.80
+                    C8.79 0.76 5.29 0.76 3.07 2.89
+                    C2.99 2.97 2.90 3.05 2.82 3.13Z"
                     fill={fillColor || 'white'}
                     fillOpacity="1"
                 />
