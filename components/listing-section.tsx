@@ -95,7 +95,7 @@ export function ListingSection() {
                 <Image
                     {...Dog}
                     alt="Dog"
-                    className="absolute w-[180px] bottom-[20px] right-[0px] scale-x-[-1] md:bottom-[150px] md:w-[300px]"
+                    className="absolute w-[180px] bottom-[20px] -right-[80px] scale-x-[-1] md:right-0 md:bottom-[150px] md:w-[300px]"
                 />
             </AnimatedElement>
 
