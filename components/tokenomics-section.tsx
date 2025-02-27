@@ -154,6 +154,11 @@ const StylizedDonutChart = () => {
                     className="size-[350px] md:size-[500px] xl:size-[600px]"
                     viewBox="0 0 300 300"
                 >
+                    <defs>
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="2" dy="2" stdDeviation="0" floodColor="rgba(0, 0, 0, 1)" />
+    </filter>
+  </defs>
                     {/* Сегменты */}
                     {segments.map(segment => (
                         <g key={segment.id}>
@@ -174,11 +179,11 @@ const StylizedDonutChart = () => {
                                 onTouchMoveCapture={() => setHoverSegment(null)}
                                 className="cursor-pointer transition-all duration-200"
                                 style={{
-                                    transform:
-                                        hoverSegment === segment.id ? "scale(1.05)" : "scale(1)",
+                                    transform: hoverSegment === segment.id ? "scale(1.08)" : "scale(1)",
                                     transformOrigin: `${centerX}px ${centerY}px`,
-                                    filter: "drop-shadow(2px 2px 0px rgba(0, 0, 0, 1))",
+                                    // filter: "drop-shadow(2px 2px 0px rgba(0, 0, 0, 1))",
                                 }}
+                                filter="url(#dropShadow)"
                             />
                         </g>
                     ))}
