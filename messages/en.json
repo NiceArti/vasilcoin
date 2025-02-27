@@ -6,7 +6,7 @@
 		"contract": "Contract"
 	},
 	"HeroSection": {
-		"description": "[b]$VASIL[/b] is a memcoin that brings kindness,[br]style and smiles!",
+		"description": "[b]$VASIL[/b] - A meme coin that brings[br]kindness, style and smiles!",
 		"join-community": "Join the community",
 		"copy": "Copy"
 	},
@@ -32,9 +32,9 @@
 		}
 	},
 	"ListingSection": {
-		"title": "The listing will start in:",
-		"description": "Don't miss the opportunity to become a part of the #VASILCOIN movement!",
-		"join": "Join",
+		"title": "Time left until Listing:",
+		"description": "Don't miss the chance to join the [b]#VASILCOIN[/b] movement!",
+		"join": "Join Now",
 		"time-units": {
 			"days": "Days",
 			"hours": "Hours",
@@ -43,7 +43,7 @@
 		}
 	},
 	"HowToUseSection": {
-		"title": "How to use[br]VASILCOIN",
+		"title": "How you could[br]use VASILCOIN",
 		"card": {
 			"0": {
 				"title": "Imagine it brings style",
@@ -60,7 +60,7 @@
 		}
 	},
 	"TokenomicsSection": {
-		"title": "Distribution of[br]smiles and kindness",
+		"title": "How Smiles and Kindness[br]are distributed",
 		"data": {
 			"0": {
 				"label": "Liquidity",
@@ -89,8 +89,8 @@
 		}
 	},
 	"PartnersSection": {
-		"title": "Partners who will emerge[br]thanks to VASILCOIN",
-		"description": "Your trust inVASILCOIN inspires partnerships that will bring joy, style, and kindness to every corner of the world!",
+		"title": "Partners thanks to[br]VASILCOIN",
+		"description": "Your trust in VASILCOIN inspires partnerships that will bring joy, style, and kindness to every corner of the world!",
 		"data": {
 			"0": {
 				"title": "House of Joy",

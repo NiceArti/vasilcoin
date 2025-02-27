@@ -32,11 +32,11 @@ export function HeroSection() {
             <Image className="hidden animate-ping-pong md:block" {...CloudGroup} alt="Funny clouds" quality={100} />
 
             <div className="inline-flex gap-3 items-center justify-center mt-3 md:justify-start">
-                <Image {...VasilcoinTokenAsset} className="aspect-square w-[50px]" alt="VASILCOIN" quality={100} />
+                <Image {...VasilcoinTokenAsset} className="aspect-square w-[50px] md:w-[80px]" alt="VASILCOIN" quality={100} />
                 <Image {...VasilcoinText} className="h-[60px] w-[288px] md:mx-0 md:w-auto md:h-auto max-h-28 max-w-[520px]" alt="VASILCOIN" quality={100} />
             </div>
-            <div className="flex flex-col justify-center mt-4 md:gap-4 md:justify-start">
-                <p className="mx-auto font-semibold text-lg md:mx-0 md:text-3xl md:leading-[52px] lg:text-[36px]">
+            <div className="flex flex-col justify-center font-semibold mt-4 md:gap-4 md:justify-start">
+                <p className="mx-auto text-lg md:mx-0 md:text-3xl md:leading-[52px] lg:text-[36px]">
                     <BBCodeRenderer text={t('description')} />
                 </p>
             </div>

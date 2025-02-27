@@ -15,6 +15,7 @@ import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
 import { Title } from "./ui/title";
 import { Section } from "./ui/section";
+import AnimatedElement from "./ui/animation-observer";
 
 export function ValuesSection() {
     const t = useTranslations('ValuesSection');
@@ -33,13 +34,15 @@ export function ValuesSection() {
                 />
             </div>
 
-            <div className="hidden relative mt-40 pb-2 w-[190px] md:block">
-                <Image
-                    {...Vasilenco}
-                    className="absolute w-full max-w-[600px] min-w-[490px] md:-bottom-[120px]"
-                    alt="Vasilenco"
-                />
-            </div>
+                <div className="hidden relative mt-40 pb-2 w-[190px] md:block">
+                    <AnimatedElement className="animate-slide-in-left w-full h-full">
+                        <Image
+                            {...Vasilenco}
+                            className="absolute w-full max-w-[600px] min-w-[490px] md:-bottom-[120px]"
+                            alt="Vasilenco"
+                        />
+                    </AnimatedElement>
+                </div>
 
             <div className="flex flex-col gap-6 md:max-w-[400px] relative">
                 <Title className="text-center top-8 md:text-right">

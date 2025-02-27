@@ -15,6 +15,7 @@ export function HowToUse() {
     const t = useTranslations('HowToUseSection');
     return (
         <Section
+            className="bg-stars bg-repeat"
             classNameInner="flex flex-col gap-8 pt-10 pb-14 md:gap-16 md:pt-20 md:pb-28"
         >
             <Title className="text-center ">

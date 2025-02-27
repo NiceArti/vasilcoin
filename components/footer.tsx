@@ -6,7 +6,7 @@ import { RiTelegram2Fill } from "react-icons/ri";
 import { BsTwitterX } from "react-icons/bs";
 
 import VasilcoinText from '@/public/vasilcoin-text.png';
-import LogoCoin from '@/public/logo-coin.png';
+import LogoCoin from '@/public/brand/vasilcoin-token.png';
 import Link from "next/link";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -25,8 +25,8 @@ export function Footer() {
             <div className="flex flex-col justify-center items-center w-full gap-3 md:flex-row">
                 <Image 
                     {...LogoCoin}
-                    className="w-24 md:mx-0"
-                    alt="Vasilcoin"
+                    className="max-w-16 md:mx-0"
+                    alt="Vasilcoin Logo"
                 />
                 <Image 
                     {...VasilcoinText}

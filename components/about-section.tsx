@@ -8,9 +8,11 @@ import CoinGroupLg from "@/public/frame-coins.png";
 import CounGroupSm from "@/public/frame-coins-sm.png";
 import LogoCoin from "@/public/logo-coin.png";
 import LogoCoin1 from "@/public/logo-coin-1.png";
+import RedCar from "@/public/red-car.png";
 import { BBCodeRenderer } from "./ui/code-renderer";
 import { Title } from "./ui/title";
 import { Section } from "./ui/section";
+import AnimatedElement from "./ui/animation-observer";
 
 export function AboutSection() {
     const t = useTranslations("AboutSection");
@@ -25,23 +27,23 @@ export function AboutSection() {
                 {t("title")}
             </Title>
 
-            <div className="relative mt-[200px] mx-auto max-w-[960px] w-full bg-white flex flex-col gap-8 md:top-[20%]">
-                <div className="flex flex-col gap-4 relative z-10 max-w-[700px] mx-auto pt-3 px-6 sm:w-[80%] sm:gap-8 md:pt-6">
+            <div className="relative mt-[200px] mx-auto max-w-[960px] w-full flex flex-col gap-8 md:top-[20%]">
+                <div className="flex flex-col gap-4 relative z-10 max-w-[700px] mx-auto pt-3 px-6 sm:w-[80%] md:gap-0 md:mb-10 md:pt-6">
                     <Title className="text-center md:hidden">
                         {t("title")}
                     </Title>
-                    <p className="text-center text-[#5A5C57] text-base sm:text-lg md:text-[28px] md:leading-10 lg:w-full">
+                    <p className="text-center text-[#5A5C57] text-base sm:text-lg md:text-[28px] md:leading-10 lg:w-full md:relative md:top-4">
                         <BBCodeRenderer text={t("description")} />
                     </p>
                     <Image
                         {...CoinGroupLg}
                         className="w-full mx-auto hidden md:block"
-                        alt="Frame"
+                        alt="CoinGroup Large"
                     />
                     <Image
                         {...CounGroupSm}
                         className="w-full mx-auto md:hidden"
-                        alt="Frame"
+                        alt="CoinGroup Small"
                     />
                 </div>
 
@@ -60,10 +62,18 @@ export function AboutSection() {
                 />
                 <Image
                     {...LogoCoin1}
-                    className="absolute w-[140px] xs:left-10 -top-[140px] scale-x-[-1] md:scale-x-[1] md:-right-[100px] lg:-right-[100px] md:top-[185px] md:w-[230px]"
+                    className="absolute w-[140px] xs:left-10 -top-[140px] scale-x-[-1] md:hidden"
                     alt="LogoCoin1"
                     quality={100}
                 />
+                <AnimatedElement className="animate-slide-in-right">
+                    <Image
+                        {...RedCar}
+                        className="hidden absolute -bottom-[180px] max-w-[532px] -right-[150px] md:block"
+                        alt="LogoCoin1"
+                        quality={100}
+                    />
+                </AnimatedElement>
             </div>
         </Section>
     );

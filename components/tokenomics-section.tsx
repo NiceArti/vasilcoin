@@ -8,6 +8,7 @@ import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
 import { Title } from "./ui/title";
 import { Section } from "./ui/section";
+import BubbleBackground from "./ui/bubble-generator";
 
 export function TokenomicsSection() {
     const t = useTranslations('TokenomicsSection');
@@ -15,10 +16,13 @@ export function TokenomicsSection() {
     return (
         <Section
             id="tokenomics"
-            className="bg-white"
+            className="bg-white overflow-y-clip"
             classNameInner="pt-[40px]"
         >
-            <Title className="text-center">
+            <BubbleBackground
+                imageUrl={'/brand/vasilcoin-token-white.png'}
+            />
+            <Title className="relative text-center">
                 <BBCodeRenderer text={t('title')} />
             </Title>
             
@@ -139,50 +143,52 @@ const StylizedDonutChart = () => {
     });
 
     return (
-        <div className="relative w-full mx-auto max-w-[370px] md:left-[-300px] md:max-w-[460px] md:max-h-[560px]">
-            <Image
-                {...LogoCoin}
-                alt="Logo Coin"
-                className="absolute left-1/2 -translate-x-1/2 w-[130px] top-[115px] pointer-events-none md:w-[160px] md:top-[150px]"
-            />
-            <svg
-                className="size-[360px] md:size-[460px]"
-                viewBox="0 0 300 300"
-            >
-                {/* Сегменты */}
-                {segments.map(segment => (
-                    <g key={segment.id}>
-                        <path
-                            d={segment.path}
-                            fill={segment.color}
-                            stroke="black"
-                            strokeWidth="2"
-                            onMouseEnter={(e) => {
-                                setHoverSegment(segment.id);
-                                setTooltipPos({ x: e.clientX, y: e.clientY - 20 });
-                            }}
-                            onMouseMove={(e) =>
-                                setTooltipPos({ x: e.clientX, y: e.clientY - 20 })
-                            }
-                            onMouseLeave={() => setHoverSegment(null)}
-                            onTouchMove={() => setHoverSegment(null)}
-                            onTouchMoveCapture={() => setHoverSegment(null)}
-                            className="cursor-pointer transition-all duration-200"
-                            style={{
-                                transform:
-                                    hoverSegment === segment.id ? "scale(1.05)" : "scale(1)",
-                                transformOrigin: `${centerX}px ${centerY}px`,
-                                filter: "drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.2))",
-                            }}
-                        />
-                    </g>
-                ))}
-            </svg>
+        <div className="relative flex flex-col items-center justify-center mb-10 md:mb-0 md:flex-row md:justify-around">
+            <div className="relative ">
+                <Image
+                    {...LogoCoin}
+                    alt="Logo Coin"
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] md:w-[140px]"
+                />
+                <svg
+                    className="size-[350px] md:size-[500px] xl:size-[600px]"
+                    viewBox="0 0 300 300"
+                >
+                    {/* Сегменты */}
+                    {segments.map(segment => (
+                        <g key={segment.id}>
+                            <path
+                                d={segment.path}
+                                fill={segment.color}
+                                stroke="black"
+                                strokeWidth="2"
+                                onMouseEnter={(e) => {
+                                    setHoverSegment(segment.id);
+                                    setTooltipPos({ x: e.clientX, y: e.clientY - 20 });
+                                }}
+                                onMouseMove={(e) =>
+                                    setTooltipPos({ x: e.clientX, y: e.clientY - 20 })
+                                }
+                                onMouseLeave={() => setHoverSegment(null)}
+                                onTouchMove={() => setHoverSegment(null)}
+                                onTouchMoveCapture={() => setHoverSegment(null)}
+                                className="cursor-pointer transition-all duration-200"
+                                style={{
+                                    transform:
+                                        hoverSegment === segment.id ? "scale(1.05)" : "scale(1)",
+                                    transformOrigin: `${centerX}px ${centerY}px`,
+                                    filter: "drop-shadow(2px 2px 0px rgba(0, 0, 0, 1))",
+                                }}
+                            />
+                        </g>
+                    ))}
+                </svg>
+            </div>
 
             {/* Всплывающее окно */}
             {hoverSegment !== null && (
                 <div
-                    className="fixed text-black text-sm z-20"
+                    className="fixed text-black text-sm z-20 w-[200px] h-[80px]"
                     style={{
                         left: tooltipPos.x,
                         top: tooltipPos.y,
@@ -191,20 +197,20 @@ const StylizedDonutChart = () => {
                     }}
                 >
                     <PopUp
-                        className="absolute w-[200px] h-[80px] -z-10 top-[-30px] left-[-35px]"
+                        className="absolute w-full h-full -z-10 top-[-30px] left-[-35px]"
                         fillColor={lightenHexColor(
                             data.find((d) => d.id === hoverSegment)?.color as string,
                             0.15
                         )}
                     />
-                    <div className="inline-flex gap-3 items-center relative top-[-8px] left-[-20px]">
+                    <div className="inline-flex gap-3 items-center relative -top-[36px] left-1/2 -translate-x-1/2  w-full h-full">
                         <div
                             className="size-[10px] rounded-full"
                             style={{
                                 background: data.find((d) => d.id === hoverSegment)?.color,
                             }}
                         ></div>
-                        <span>
+                        <span className="whitespace-nowrap">
                             {data.find((d) => d.id === hoverSegment)?.label}:{" "}
                             {data.find((d) => d.id === hoverSegment)?.value}%
                         </span>
@@ -213,17 +219,16 @@ const StylizedDonutChart = () => {
             )}
 
             {/* Легенда */}
-            <div className="flex flex-col justify-center mt-[-20px] mb-11 gap-4 w-[300px] mx-auto md:relative md:left-[500px] md:top-[-320px]">
+            <div className="flex flex-col justify-center gap-4 mx-auto md:gap-8">
                 {segments.map((segment) => (
-                    <div key={segment.id} className="flex items-center">
+                    <div key={segment.id} className="flex items-center md:gap-3">
                         <div
-                            className="size-5 mr-2 rounded"
+                            className="size-5 min-w-5 mr-2 rounded border border-black md:border-2 md:size-6 xl:size-8"
                             style={{
                                 backgroundColor: segment.color,
-                                border: "1px solid black",
                             }}
                         />
-                        <span className="text-base">
+                        <span className="text-base whitespace-nowrap md:text-[20px] xl:text-[28px]">
                             {segment.description} ({segment.label}): {segment.value}%
                         </span>
                     </div>

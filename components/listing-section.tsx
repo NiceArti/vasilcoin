@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Countdown from 'react-countdown';
 import Link from "next/link";
@@ -8,17 +8,31 @@ import { LuMousePointerClick } from "react-icons/lu";
 
 import UnitCloud from '@/public/listing-cloud.png';
 import Rocket from '@/public/rocket.png';
+import Dog from '@/public/dog.png';
+import Watches from '@/public/watches.png';
 import BgCloud from '@/public/background/cloud.png';
 import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
 import { Title } from "./ui/title";
 import { Section } from "./ui/section";
 import { StyledLink } from "./ui/styled-elements";
+import AnimatedElement from "./ui/animation-observer";
+import { cn } from "@/lib/utils";
 
 
 export function ListingSection() {
     const t = useTranslations('ListingSection');
     const finishTime = new Date('2025-03-22T00:00:00Z');
+    const [isFast, setIsFast] = useState(false);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setIsFast(true);
+            setTimeout(() => setIsFast(false), 2000); // Через 2 секунды возвращаем к медленной тряске
+        }, 5000); 
+
+        return () => clearInterval(interval);
+    }, []);
 
     const renderer = ({
         days,
@@ -48,7 +62,7 @@ export function ListingSection() {
                             <TimerUnitStyled unit={seconds} unitName={t('time-units.seconds')} />
                         </div>
                     </div>
-                    <div className="w-full gap-10 justify-center hidden md:inline-flex">
+                    <div className="w-full gap-28 justify-center hidden md:inline-flex">
                         <TimerUnitStyled unit={days} unitName={t('time-units.days')} />
                         <TimerUnitStyled unit={minutes} unitName={t('time-units.hours')} />
                         <TimerUnitStyled unit={hours} unitName={t('time-units.minutes')} />
@@ -61,23 +75,41 @@ export function ListingSection() {
 
     return (
         <Section
-            className="bg-[#FFC0CB]"
+            className="bg-[#FFC0CB] overflow-y-clip"
             classNameInner="py-14 md:pb-28"
         >
             <Image
                 {...BgCloud}
                 alt="Cloud"
-                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[750px]"
-            />
-            <Image
-                {...Rocket}
-                alt="Rocket"
-                className="absolute w-[200px] bottom-[100px] left-[-50px] md:top-[400px] md:w-[300px] lg:left-0"
+                className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[750px] md:min-w-[1600px] md:-translate-y-[400px]"
             />
 
+            <AnimatedElement threshold={0.7} className="animate-slide-in-left">
+                <Image
+                    {...Rocket}
+                    alt="Rocket"
+                    className="absolute w-[180px] -bottom-[30px] left-[-80px] md:bottom-[0px] md:w-[400px]"
+                />
+            </AnimatedElement>
+            <AnimatedElement threshold={0.7} className="animate-slide-in-right">
+                <Image
+                    {...Dog}
+                    alt="Dog"
+                    className="absolute w-[180px] bottom-[20px] right-[0px] scale-x-[-1] md:bottom-[150px] md:w-[300px]"
+                />
+            </AnimatedElement>
 
-            <div className="relative flex flex-col gap-11 md:gap-20 md:mt-[100px]">
-                <Title className="text-center">
+            <div className="animate-levitate">
+                <Image
+                    {...Watches}
+                    alt="Watches"
+                    className={cn("absolute w-[180px] -right-[40px] -top-[50px] md:w-[280px] md:top-[100px] md:-right-[140px]", isFast ? "animate-shake-fast" : "animate-shake-slow")}
+                />
+            </div>
+
+
+            <div className="relative flex flex-col gap-11 md:gap-20 md:mt-5">
+                <Title className="max-w-[300px] mx-auto md:mx-0 md:max-w-full md:text-center">
                     <BBCodeRenderer text={t('title')} />
                 </Title>
 
@@ -90,12 +122,13 @@ export function ListingSection() {
                         // setIsFinished(true);
                     }}
                 />
-
-                <p className="mx-auto text-[42px] max-w-3xl text-center font-bold hidden md:block">
-                    {t('description')}
+                
+                <p className="mx-auto max-w-3xl text-[26px] font-bold text-center md:text-[42px] md:font-semibold ">
+                    <BBCodeRenderer className="hidden md:block" text={t('description')} />
+                    <span className="md:hidden">#VASILCOIN</span>
                 </p>
 
-                <StyledLink className="mx-auto bg-secondary mt-8 px-8 text-xl md:text-[32px] md:py-6">
+                <StyledLink className="mx-auto mt-8 px-8 text-xl md:text-[32px] md:py-6">
                     <LuMousePointerClick className="scale-x-[-1] text-[23px] md:text-[36px]" />
                     {t('join')}
                 </StyledLink>

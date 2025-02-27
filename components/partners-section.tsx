@@ -4,25 +4,36 @@ import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { Carousel, CarouselContent, CarouselItem } from "./ui/carousel";
 
-import LipriconBoot from '@/public/lipricon-boot.png';
-import Scarf from '@/public/scarf.png';
 import { useTranslations } from "next-intl";
 import { BBCodeRenderer } from "./ui/code-renderer";
 import { Title } from "./ui/title";
 import { Section } from "./ui/section";
 
+import VortexAsset from '@/public/vorex-pink.png';
+import BagAsset from '@/public/bag.png';
+import Scarf from '@/public/scarf.png';
+
 export function PartnersSection() {
     const t = useTranslations('PartnersSection');
     return (
         <Section
-            className="bg-dots-tiled bg-repeat"
-            classNameInner="flex flex-col gap-6 pt-10 px-0 pb-16 md:py-24 md:px-4"
+            className="bg-[#F9C3B8] overflow-y-clip"
+            classNameInner="flex flex-col gap-3 pt-10 px-0 pb-16 md:py-24 md:px-4"
         >
-            <Title className="text-center px-4">
+            <div className="absolute w-full h-full animate-rotate-counterclockwise">
+                <Image
+                    className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 min-w-[1500px]"
+                    {...VortexAsset}
+                    alt="Vortex.png"
+                />
+            </div>
+
+
+            <Title className="relative text-center px-4">
                 <BBCodeRenderer text={t('title')} />
             </Title>
 
-            <p className="text-base text-center px-4 mx-auto md:max-w-[800px] md:text-[22px] md:leading-9">
+            <p className="relative text-base text-center px-4 mx-auto mb-[70px] md:max-w-[800px] md:text-[22px] md:leading-9">
                 {t('description')}
             </p>
 
@@ -72,12 +83,12 @@ export function PartnersSection() {
             <Image
                 {...Scarf}
                 alt="Scarf"
-                className="absolute w-[160px] -left-[20px] -bottom-[50px] md:w-[220px] md:-left-[40px] md:top-[100px]"
+                className="absolute w-[130px] left-[20px] top-[215px] md:w-[220px] md:-left-[40px] md:top-[100px]"
             />
             <Image
-                {...LipriconBoot}
-                alt="LipriconBoot"
-                className="absolute w-[232px] -right-[80px] -top-[20px] md:w-[350px] md:-right-[120px] md:top-[80px]"
+                {...BagAsset}
+                alt="Bag"
+                className="absolute w-[120px] right-[20px] top-[210px] md:w-[350px] md:-right-[120px] md:top-[80px]"
             />
         </Section>
     );
@@ -95,7 +106,7 @@ function Card({
 }) {
     return (
         <div className={cn("relative flex flex-col items-center gap-2 p-4 justify-center min-w-[284px] max-w-[284px] xl:min-w-[396px] xl:max-w-[396px] mx-auto bg-white border border-black rounded-3xl shadow-[3px_3px_0px_black]", className)}>
-            <h1 className="font-bold text-black text-[22px] xl:text-[28px]">
+            <h1 className="font-bold text-black text-[20px] xl:text-[28px]">
                 {title}
             </h1>
             <p className={cn("text-[#5A5C57] text-[16px] xl:text-[22px] text-center")}>
