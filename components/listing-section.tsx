@@ -3,7 +3,6 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Countdown from 'react-countdown';
-import Link from "next/link";
 import { LuMousePointerClick } from "react-icons/lu";
 
 import UnitCloud from '@/public/listing-cloud.png';

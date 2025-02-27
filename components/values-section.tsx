@@ -70,11 +70,13 @@ export function ValuesSection() {
             </div>
 
             <div className="relative mt-[280px] w-full pb-2 md:hidden">
-                <Image
-                    {...Vasilenco}
-                    className="absolute -bottom-[500px] left-1/2 -translate-x-1/2 w-full max-w-[500px] min-w-[490px]"
-                    alt="Vasilenco"
-                />
+                <AnimatedElement className="animate-fade-in-up">
+                    <Image
+                        {...Vasilenco}
+                        className="absolute -bottom-[500px] left-1/2 -translate-x-1/2 w-full max-w-[500px] min-w-[490px]"
+                        alt="Vasilenco"
+                    />
+                </AnimatedElement>
             </div>
         </Section>
     );

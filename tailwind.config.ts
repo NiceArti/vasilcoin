@@ -99,6 +99,10 @@ export default {
 					"0%, 100%": { transform: "translateY(0)" },
 					"50%": { transform: "translateY(-10px)" },
 				},
+				"fade-in-up": {
+					"0%": { opacity: '0', top: "1000px" },
+					"100%": { opacity: '1', top: "0" },
+				},
 			},
 			animation: {
 				"slide-in-left": "slide-in-left 2s cubic-bezier(0.25, 1, 0.5, 1) forwards",
@@ -109,6 +113,7 @@ export default {
 				"shake-slow": "shake-rotate-slow 3s infinite linear",
 				"shake-fast": "shake-rotate-fast 1s infinite linear",
 				"levitate": "levitate 4s infinite ease-in-out",
+				"fade-in-up": "fade-in-up 0.4s ease-out",
 			},
 			duration: {
 				3000: "3000ms",
