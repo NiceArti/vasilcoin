@@ -40,6 +40,7 @@ const StylizedDonutChart = () => {
         const handleScroll = () => {
             if (window.innerWidth <= 768) {
                 setHoverSegment(null);
+                setTooltipPos({ x: 0, y: 0 });
             }
         };
     
