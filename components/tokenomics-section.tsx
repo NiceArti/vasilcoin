@@ -380,7 +380,7 @@ const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) 
                 <div
                     // @ts-ignore
                     xmlns="http://www.w3.org/1999/xhtml" 
-                    className="absolute w-full h-full"
+                    className="absolute w-[329px] h-[329px]"
                     style={{
                         backdropFilter: 'blur(54px)',
                         clipPath: 'url("#bgblur_clip_path")',
