@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import LogoCoin from '@/public/logo-coin.png'
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -35,6 +35,19 @@ const StylizedDonutChart = () => {
     const t = useTranslations('TokenomicsSection');
     const [hoverSegment, setHoverSegment] = useState<number | null>(null);
     const [tooltipPos, setTooltipPos] = useState({ x: 0, y: 0 });
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.innerWidth <= 768) {
+                setHoverSegment(null);
+            }
+        };
+    
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     // Данные для графика
     const data = [
