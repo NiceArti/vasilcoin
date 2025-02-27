@@ -370,6 +370,7 @@ const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) 
             xmlns="http://www.w3.org/2000/svg"
         >
             <foreignObject
+                className="absolute"
                 x="-105"
                 y="-105"
                 width="329"
