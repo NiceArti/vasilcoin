@@ -369,12 +369,10 @@ const PopUp = ({fillColor, className}:{fillColor?: string, className?: string}) 
             xmlns="http://www.w3.org/2000/svg"
         >
             <foreignObject x="-105.45" y="-105.389" width="329.841" height="250.861">
-                <div
+                <div className="w-full h-full"
                     style={{
                         backdropFilter: 'blur(53.08px)',
                         clipPath: `url(#bgblur_0_8_12964_clip_path)`,
-                        height: `100%`,
-                        width: `100%`
                     }}
                 ></div>
             </foreignObject>
