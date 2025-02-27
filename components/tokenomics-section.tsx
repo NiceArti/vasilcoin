@@ -208,13 +208,13 @@ const StylizedDonutChart = () => {
                             0.15
                         )}
                     />
-                    <div className="inline-flex gap-3 items-center relative -top-[36px] left-1/2 -translate-x-1/2  w-full h-full">
+                    <div className="inline-flex items-center justify-center gap-3 relative -top-[36px] -left-[36px] w-full h-full">
                         <div
                             className="size-[10px] rounded-full"
                             style={{
                                 background: data.find((d) => d.id === hoverSegment)?.color,
                             }}
-                        ></div>
+                        />
                         <span className="whitespace-nowrap">
                             {data.find((d) => d.id === hoverSegment)?.label}:{" "}
                             {data.find((d) => d.id === hoverSegment)?.value}%
