@@ -61,8 +61,8 @@ function Card({
                 alt="Card Logo"
             />
 
-            <h1 className="font-bold text-[22px] text-center mt-8 md:text-[28px]">{title}</h1>
-            <p className="text-center mt-5 text-[#5A5C57] text-base font-normal md:text-[22px]">{description}</p>
+            <h1 className="font-bold text-[20px] text-center mt-[18px] md:text-[28px]">{title}</h1>
+            <p className="text-center mt-3 text-[#5A5C57] text-lg font-normal md:text-[22px]">{description}</p>
         </div>
     );
 }

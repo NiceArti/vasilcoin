@@ -85,7 +85,7 @@ function ImageGroup() {
                 alt="RedCar.png"
             />
             <Image
-                className="saturate-[1.1] -hue-rotate-[5deg] absolute -right-[100px] bottom-[120px] min-w-[500px] max-w-[500px] md:min-w-[800px] md:max-w-[800px] md:bottom-[300px] md:-right-[350px] xl:-right-[250px] xl:min-w-[900px] xl:max-w-[900px]"
+                className="saturate-[1.1] -hue-rotate-[5deg] absolute -right-[120px] bottom-[80px] min-w-[550px] max-w-[500px] md:min-w-[800px] md:max-w-[800px] md:bottom-[300px] md:-right-[350px] xl:-right-[250px] xl:min-w-[900px] xl:max-w-[900px]"
                 {...TonCoinGroup}
                 quality={100}
                 alt="TonCoinGroup.png"

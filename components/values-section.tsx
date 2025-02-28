@@ -3,6 +3,13 @@
 import Image, { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 
+
+import { useTranslations } from "next-intl";
+import { BBCodeRenderer } from "./ui/code-renderer";
+import { Title } from "./ui/title";
+import { Section } from "./ui/section";
+import AnimatedElement from "./ui/animation-observer";
+
 import Vortex from '@/public/vortex.png';
 import EmojiIcon from '@/public/emoji-icon.png';
 import SupportIcon from '@/public/support-icon.png';
@@ -11,15 +18,11 @@ import Cloud0 from '@/public/cloud-0.png';
 import Cloud1 from '@/public/cloud-1.png';
 import Cloud2 from '@/public/cloud-2.png';
 import Vasilenco from "@/public/vasilenco-full-height.png";
-import { useTranslations } from "next-intl";
-import { BBCodeRenderer } from "./ui/code-renderer";
-import { Title } from "./ui/title";
-import { Section } from "./ui/section";
-import AnimatedElement from "./ui/animation-observer";
+import ToncoinGroup from "@/public/toncoin-group.png";
 
 export function ValuesSection() {
     const t = useTranslations('ValuesSection');
-    
+
     return (
         <Section
             id="values"
@@ -34,15 +37,21 @@ export function ValuesSection() {
                 />
             </div>
 
-                <div className="hidden relative mt-40 pb-2 w-[190px] md:block">
-                    <AnimatedElement className="animate-slide-in-left w-full h-full">
-                        <Image
-                            {...Vasilenco}
-                            className="absolute w-full max-w-[600px] min-w-[490px] md:-bottom-[100px] md:max-w-[600px] md:min-w-[600px]"
-                            alt="Vasilenco"
-                        />
-                    </AnimatedElement>
-                </div>
+            <Image
+                {...ToncoinGroup}
+                className="absolute top-0 left-1/2 -translate-x-1/2 md:hidden"
+                alt="TonCoinGroup"
+            />
+
+            <div className="hidden relative mt-40 pb-2 w-[190px] md:block">
+                <AnimatedElement threshold={0.5} className="animate-slide-in-left w-full h-full">
+                    <Image
+                        {...Vasilenco}
+                        className="absolute w-full max-w-[600px] min-w-[490px] md:-bottom-[100px] md:max-w-[600px] md:min-w-[600px]"
+                        alt="Vasilenco"
+                    />
+                </AnimatedElement>
+            </div>
 
             <div className="relative flex flex-col gap-6 md:max-w-[600px] md:min-w-[600px] md:mt-[30px] md:gap-14 md:mb-[30px]">
                 <Title className="text-center top-8 md:text-right md:leading-tight">
@@ -60,6 +69,7 @@ export function ValuesSection() {
                     logo={ManagementIcon}
                     logoCloud={Cloud1}
                     classNameText="max-w-[230px]"
+                    classNameCloud="min-w-[350px]"
                 />
                 <Card
                     title={t('values.2.title')}
@@ -69,7 +79,7 @@ export function ValuesSection() {
                 />
             </div>
 
-            <div className="relative mt-[280px] w-full pb-2 md:hidden">
+            <div className="relative mt-[240px] w-full pb-2 md:hidden">
                 <AnimatedElement className="animate-fade-in-up">
                     <Image
                         {...Vasilenco}
@@ -90,25 +100,27 @@ function Card({
     logoCloud,
     className,
     classNameText,
+    classNameCloud,
 }: {
     title: string,
     description: string,
     logo: StaticImageData,
     logoCloud: StaticImageData,
-    className?: string
-    classNameText?: string
+    className?: string,
+    classNameText?: string,
+    classNameCloud?: string,
 }) {
     return (
-        <div className={cn("relative inline-flex items-center text-base gap-6 p-8 justify-center max-w-[435px] mx-auto md:mr-0", className)}>
+        <div className={cn("relative inline-flex items-center justify-center text-base gap-3 p-8 max-w-[435px] mx-auto md:mr-0", className)}>
             <Image
                 {...logoCloud}
-                className="absolute left-1/2 -translate-x-1/2 w-full min-w-[260px] max-w-[410px] md:min-w-[600px] md:max-w-[600px] md:left-[140px]"
+                className={cn("absolute left-1/2 -translate-x-1/2 w-full min-w-[260px] max-w-[410px] md:min-w-[600px] md:max-w-[600px] md:left-[140px]", classNameCloud)}
                 alt="Cloud"
             />
 
             <Image
                 {...logo}
-                className="relative w-[50px] md:w-[82px]"
+                className="relative w-[50px] ml-4 md:ml-0 md:w-[82px]"
                 alt="Card Logo"
             />
 

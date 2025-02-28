@@ -4,6 +4,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 
 import AboutUsFrame from "@/public/about-us-frame.png";
+import AboutUsFrameSm from "@/public/about-us-frame-sm.png";
 import CoinGroupLg from "@/public/frame-coins.png";
 import CounGroupSm from "@/public/frame-coins-sm.png";
 import LogoCoin from "@/public/logo-coin.png";
@@ -21,13 +22,13 @@ export function AboutSection() {
         <Section
             id="about"
             className="bg-emoji-tiled bg-repeat"
-            classNameInner="pt-[60px] pb-[100px] md:pb-[230px]"
+            classNameInner="py-12 pb-[100px] md:pb-[230px]"
         >
             <Title className="hidden text-center mb-5 md:block md:-mb-[100px]">
                 {t("title-pc")}
             </Title>
 
-            <div className="relative mt-[200px] mx-auto max-w-[960px] w-full flex flex-col gap-8 md:top-[20%]">
+            <div className="relative mt-[180px] mx-auto max-w-[960px] w-full flex flex-col gap-8 md:top-[20%]">
                 <div className="flex flex-col gap-4 relative z-10 max-w-[700px] mx-auto pt-3 px-6 sm:w-[80%] md:gap-2 md:mb-10 md:pt-6">
                     <Title className="text-center md:hidden">
                         {t("title-mobile")}
@@ -42,14 +43,20 @@ export function AboutSection() {
                     />
                     <Image
                         {...CounGroupSm}
-                        className="w-full mx-auto md:hidden"
+                        className=" w-full mx-auto md:hidden"
                         alt="CoinGroup Small"
                     />
                 </div>
 
                 <Image
                     {...AboutUsFrame}
-                    className="absolute w-full h-[130%] max-h-[500px] mx-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2"
+                    className="absolute w-full h-[130%] max-h-[500px] mx-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 hidden md:block"
+                    alt="Frame"
+                    quality={100}
+                />
+                <Image
+                    {...AboutUsFrameSm}
+                    className="absolute w-full max-h-[500px] mx-auto left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 md:hidden"
                     alt="Frame"
                     quality={100}
                 />

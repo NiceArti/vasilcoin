@@ -157,8 +157,8 @@ const StylizedDonutChart = () => {
     });
 
     return (
-        <div className="relative flex flex-col items-center justify-center mb-10 md:mb-0 md:flex-row md:justify-around">
-            <div className="relative ">
+        <div className="relative flex flex-col items-center justify-center mb-8 md:mb-0 md:flex-row md:justify-around">
+            <div className="relative">
                 <Image
                     {...LogoCoin}
                     alt="Logo Coin"
@@ -238,7 +238,7 @@ const StylizedDonutChart = () => {
             )}
 
             {/* Легенда */}
-            <div className="flex flex-col justify-center gap-4 mx-auto md:gap-8">
+            <div className="relative -top-6 flex flex-col justify-center gap-[10px] mx-auto md:gap-8">
                 {segments.map((segment) => (
                     <div key={segment.id} className="flex items-center md:gap-3">
                         <div

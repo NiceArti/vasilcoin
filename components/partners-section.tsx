@@ -18,7 +18,7 @@ export function PartnersSection() {
     return (
         <Section
             className="bg-[#F9C3B8] overflow-y-clip"
-            classNameInner="flex flex-col gap-3 pt-10 px-0 pb-16 md:pb-24 md:pt-16 md:px-4"
+            classNameInner="flex flex-col gap-3 pt-10 px-0 pb-12 md:pb-24 md:pt-16 md:px-4"
         >
             <div className="absolute w-full h-full animate-rotate-counterclockwise">
                 <Image
@@ -34,7 +34,7 @@ export function PartnersSection() {
                 <BBCodeRenderer className="md:hidden" text={t('title-mobile')} />
             </Title>
 
-            <p className="relative text-base text-center px-4 mx-auto mt-[20px] mb-[70px] md:max-w-[700px] md:text-[22px] md:leading-9">
+            <p className="relative text-base px-4 mx-auto mt-[20px] mb-[70px] md:text-center md:max-w-[700px] md:text-[22px] md:leading-9">
                 {t('description')}
             </p>
 
