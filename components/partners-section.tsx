@@ -37,6 +37,19 @@ export function PartnersSection() {
                 {t('description')}
             </p>
 
+            <div className="relative inline-flex justify-between -top-[80px] z-20 md:hidden">
+                <Image
+                    {...Scarf}
+                    alt="Scarf"
+                    className="absolute w-[130px] left-[20px] animate-levitate"
+                    />
+                <Image
+                    {...BagAsset}
+                    alt="Bag"
+                    className="absolute w-[120px] right-[20px] animate-levitate delay-500"
+                />
+            </div>
+
             {/* Mobile cards */}
             <Carousel className="mt-[20px] select-none md:hidden">
                 <CarouselContent className="min-w-[300px] max-w-[320px] w-[60%] mx-auto mb-1">
@@ -83,12 +96,12 @@ export function PartnersSection() {
             <Image
                 {...Scarf}
                 alt="Scarf"
-                className="absolute w-[130px] left-[20px] top-[215px] md:w-[220px] md:-left-[40px] md:top-[100px]"
+                className="hidden absolute -left-[40px] top-[100px] w-[220px] animate-levitate md:block"
             />
             <Image
                 {...BagAsset}
                 alt="Bag"
-                className="absolute w-[120px] right-[20px] top-[210px] md:w-[350px] md:-right-[120px] md:top-[80px]"
+                className="hidden absolute -right-[120px] top-[80px] w-[350px] animate-levitate md:block"
             />
         </Section>
     );
