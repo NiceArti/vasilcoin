@@ -18,7 +18,7 @@ export function HowToUse() {
             className="bg-stars bg-repeat"
             classNameInner="flex flex-col gap-8 pt-10 pb-14 md:gap-16 md:pt-20 md:pb-28"
         >
-            <Title className="text-center ">
+            <Title className="text-center">
                 <BBCodeRenderer text={t('title')} />
             </Title>
 
@@ -54,7 +54,7 @@ function Card({
     className?: string
 }) {
     return (
-        <div className={cn("border border-black shadow-[3px_3px_0px_black] bg-white font-bold text-base gap-3 p-8 rounded-3xl", className)}>
+        <div className={cn("border border-black shadow-[3px_3px_0px_black] bg-white font-bold text-base gap-3 p-8 rounded-3xl lg:min-w-[416px]", className)}>
             <Image
                 {...logo}
                 className="w-[64px] mx-auto md:w-[80px]"

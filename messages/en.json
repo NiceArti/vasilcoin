@@ -1,21 +1,22 @@
 {
 	"Header": {
-		"about": "About project",
+		"about": "About",
 		"values": "Values",
 		"tokenomics": "Tokenomics",
 		"contract": "Contract"
 	},
 	"HeroSection": {
 		"description": "[b]$VASIL[/b] - A meme coin that brings kindness, style and smiles!",
-		"join-community": "Join the community",
+		"join-community": "Join our Community",
 		"copy": "Copy"
 	},
 	"AboutSection": {
-		"title": "About $VASIL",
+		"title-pc": "About VASILCOIN",
+		"title-mobile": "About $VASIL",
 		"description": "[b class='text-black']VASILCOIN[/b] is more than just a [b class='text-black']TON blockchain[/b] meme coin: it’s a symbol of joy, kindness, and style. Created to inspire, unite people, and make the world brighter and much happier. Join us to became a happy society!"
 	},
 	"ValuesSection": {
-		"title": "Values of[br]VASILCOIN",
+		"title": "The Values of[br]VASILCOIN",
 		"values": {
 			"0": {
 				"title": "Kindness",
@@ -33,7 +34,7 @@
 	},
 	"ListingSection": {
 		"title": "Time left until Listing:",
-		"description": "Don't miss the chance to join the [b]#VASILCOIN[/b] movement!",
+		"description": "Don't miss the chance to join the [b class='font-extrabold']#VASILCOIN[/b] movement!",
 		"join": "Join Now",
 		"time-units": {
 			"days": "Days",
@@ -89,7 +90,8 @@
 		}
 	},
 	"PartnersSection": {
-		"title": "Partners thanks to[br]VASILCOIN",
+		"title-pc": "Partners who will emerge[br]thanks to VASILCOIN",
+		"title-mobile": "Partners thanks to[br]VASILCOIN",
 		"description": "Your trust in VASILCOIN inspires partnerships that will bring joy, style, and kindness to every corner of the world!",
 		"data": {
 			"0": {
@@ -133,6 +135,6 @@
 	"FooterSection": {
 		"description": "Join the #VASILCOIN movement and help make the world brighter, kinder, and more stylish!",
 		"copyright": "All rights reserved.",
-		"linktree": "Together for a smile with #VASILCOIN!"
+		"linktree": "Together for smiles with VASILCOIN!"
 	}
 }

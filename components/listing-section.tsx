@@ -86,29 +86,31 @@ export function ListingSection() {
             <AnimatedElement threshold={0.7} className="animate-slide-in-left">
                 <Image
                     {...Rocket}
+                    quality={100}
                     alt="Rocket"
-                    className="absolute w-[180px] -bottom-[30px] left-[-80px] md:bottom-[0px] md:w-[400px]"
+                    className="absolute animate-levitate duration-3000 w-[180px] -bottom-[30px] left-[-80px] md:bottom-[0px] md:w-[360px] md:-left-[40px]"
                 />
             </AnimatedElement>
             <AnimatedElement threshold={0.7} className="animate-slide-in-right">
                 <Image
                     {...Dog}
+                    quality={100}
                     alt="Dog"
-                    className="absolute w-[180px] bottom-[20px] -right-[80px] scale-x-[-1] md:right-0 md:bottom-[150px] md:w-[300px]"
+                    className="absolute animate-levitate-negative delay-500 w-[180px] bottom-[20px] scale-x-[-1] -right-[80px] md:right-0 md:bottom-[100px] md:w-[300px]"
                 />
             </AnimatedElement>
 
             <div className="animate-levitate">
                 <Image
                     {...Watches}
+                    quality={100}
                     alt="Watches"
                     className={cn("absolute w-[180px] -right-[40px] -top-[50px] md:w-[280px] md:top-[100px] md:-right-[140px]", isFast ? "animate-shake-fast" : "animate-shake-slow")}
                 />
             </div>
 
-
-            <div className="relative flex flex-col gap-11 md:gap-20 md:mt-5">
-                <Title className="max-w-[300px] mx-auto md:mx-0 md:max-w-full md:text-center">
+            <div className="relative flex flex-col gap-11 md:gap-16">
+                <Title className="relative max-w-[300px] mx-auto md:mx-0 md:max-w-full md:text-center md:top-4">
                     <BBCodeRenderer text={t('title')} />
                 </Title>
 
@@ -127,7 +129,7 @@ export function ListingSection() {
                     <span className="md:hidden">#VASILCOIN</span>
                 </p>
 
-                <StyledLink className="mx-auto mt-8 px-8 text-xl md:text-[32px] md:py-6">
+                <StyledLink className="mx-auto mt-8 px-8 text-xl md:text-[32px] md:py-6 md:mt-0 md:w-[280px]">
                     <LuMousePointerClick className="scale-x-[-1] text-[23px] md:text-[36px]" />
                     {t('join')}
                 </StyledLink>

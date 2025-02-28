@@ -18,7 +18,7 @@ export function PartnersSection() {
     return (
         <Section
             className="bg-[#F9C3B8] overflow-y-clip"
-            classNameInner="flex flex-col gap-3 pt-10 px-0 pb-16 md:py-24 md:px-4"
+            classNameInner="flex flex-col gap-3 pt-10 px-0 pb-16 md:pb-24 md:pt-16 md:px-4"
         >
             <div className="absolute w-full h-full animate-rotate-counterclockwise">
                 <Image
@@ -30,10 +30,11 @@ export function PartnersSection() {
 
 
             <Title className="relative text-center px-4">
-                <BBCodeRenderer text={t('title')} />
+                <BBCodeRenderer className="hidden md:block" text={t('title-pc')} />
+                <BBCodeRenderer className="md:hidden" text={t('title-mobile')} />
             </Title>
 
-            <p className="relative text-base text-center px-4 mx-auto mb-[70px] md:max-w-[800px] md:text-[22px] md:leading-9">
+            <p className="relative text-base text-center px-4 mx-auto mt-[20px] mb-[70px] md:max-w-[700px] md:text-[22px] md:leading-9">
                 {t('description')}
             </p>
 
@@ -73,7 +74,7 @@ export function PartnersSection() {
             </Carousel>
 
             {/* PC Cards */}
-            <div className="gap-5 justify-center w-full mt-[20px] hidden md:inline-flex">
+            <div className="gap-5 justify-center w-full -mt-[20px] hidden md:inline-flex">
                 {[...Array(3)].map((_, i) => (
                     <div key={i} className="flex flex-col gap-5">
                         <Card
@@ -101,7 +102,7 @@ export function PartnersSection() {
             <Image
                 {...BagAsset}
                 alt="Bag"
-                className="hidden absolute -right-[120px] top-[80px] w-[350px] animate-levitate md:block"
+                className="hidden absolute -right-[120px] top-[80px] w-[300px] animate-levitate md:block"
             />
         </Section>
     );
@@ -118,11 +119,11 @@ function Card({
     className?: string,
 }) {
     return (
-        <div className={cn("relative flex flex-col items-center gap-2 p-4 justify-center min-w-[284px] max-w-[284px] xl:min-w-[396px] xl:max-w-[396px] mx-auto bg-white border border-black rounded-3xl shadow-[3px_3px_0px_black]", className)}>
+        <div className={cn("relative flex flex-col items-center gap-2 p-4 justify-center min-w-[284px] max-w-[284px] xl:min-w-[416px] xl:max-w-[416px] xl:min-h-[158px] mx-auto bg-white border border-black rounded-3xl shadow-[3px_3px_0px_black]", className)}>
             <h1 className="font-bold text-black text-[20px] xl:text-[28px]">
                 {title}
             </h1>
-            <p className={cn("text-[#5A5C57] text-[16px] xl:text-[22px] text-center")}>
+            <p className={cn("text-[#5A5C57] text-[16px] xl:text-[22px] text-center xl:px-4")}>
                 {description}
             </p>
         </div>

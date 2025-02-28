@@ -99,6 +99,10 @@ export default {
 					"0%, 100%": { transform: "translateY(0)" },
 					"50%": { transform: "translateY(-10px)" },
 				},
+				'levitate-negative': {
+					'0%, 100%': { transform: 'translateY(0) scaleX(-1)' },
+					'50%': { transform: 'translateY(-10px) scaleX(-1)' },
+				},
 				"fade-in-up": {
 					"0%": { opacity: '0', top: "1000px" },
 					"100%": { opacity: '1', top: "0" },
@@ -113,12 +117,13 @@ export default {
 				"shake-slow": "shake-rotate-slow 3s infinite linear",
 				"shake-fast": "shake-rotate-fast 1s infinite linear",
 				"levitate": "levitate 4s infinite ease-in-out",
+				"levitate-negative": "levitate-negative 4s infinite ease-in-out",
 				"fade-in-up": "fade-in-up 0.4s ease-out",
 			},
 			duration: {
-				3000: "3000ms",
-				5000: "5000ms",
-				10000: "10000ms",
+				'3000': "3000ms",
+				'5000': "5000ms",
+				'10000': "10000ms",
 			},
 		}
 	},

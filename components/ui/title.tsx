@@ -9,7 +9,7 @@ export const Title = React.forwardRef<
         <h1
             ref={ref}
             className={cn(
-                "text-[32px] font-bold text-black sm:text-[36px] md:text-[52px] lg:text-[72px]",
+                "text-[32px] font-bold text-black sm:text-[36px] md:text-[52px] lg:text-[72px] lg:leading-snug",
                 className
             )}
             {...props}

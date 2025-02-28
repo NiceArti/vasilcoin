@@ -6,6 +6,7 @@ body {
   font-family: var(--font-nunito), Arial, Helvetica, sans-serif;
 }
 
+
 @layer base {
   :root {
     --background: 264 35% 81%;

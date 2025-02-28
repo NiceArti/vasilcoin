@@ -26,8 +26,8 @@ interface Bubble {
 const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
     imageUrl,
     minSize = 20,
-    maxSize = 100,
-    bubbleCount = 20,
+    maxSize = 80,
+    bubbleCount = 60,
 }) => {
     // Генерируем массив пузырьков с произвольными параметрами
     const bubbles = useMemo(() => {
@@ -119,6 +119,7 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
                                 height={bubble.size}
                                 quality={100}
                                 alt="Bubble Image Generated"
+                                className="opacity-25"
                                 style={{
                                     width: "100%",
                                     height: "100%",

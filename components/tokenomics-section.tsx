@@ -17,7 +17,7 @@ export function TokenomicsSection() {
         <Section
             id="tokenomics"
             className="bg-white overflow-y-clip"
-            classNameInner="pt-[40px]"
+            classNameInner="pt-[40px] md:pt-[80px]"
         >
             <BubbleBackground
                 imageUrl={'/brand/vasilcoin-token-white.png'}

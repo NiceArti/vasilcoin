@@ -21,18 +21,18 @@ export function AboutSection() {
         <Section
             id="about"
             className="bg-emoji-tiled bg-repeat"
-            classNameInner="pt-[60px] pb-[100px] md:pb-[200px]"
+            classNameInner="pt-[60px] pb-[100px] md:pb-[230px]"
         >
-            <Title className="hidden text-center mb-5 md:block md:mb-0">
-                {t("title")}
+            <Title className="hidden text-center mb-5 md:block md:-mb-[100px]">
+                {t("title-pc")}
             </Title>
 
             <div className="relative mt-[200px] mx-auto max-w-[960px] w-full flex flex-col gap-8 md:top-[20%]">
-                <div className="flex flex-col gap-4 relative z-10 max-w-[700px] mx-auto pt-3 px-6 sm:w-[80%] md:gap-0 md:mb-10 md:pt-6">
+                <div className="flex flex-col gap-4 relative z-10 max-w-[700px] mx-auto pt-3 px-6 sm:w-[80%] md:gap-2 md:mb-10 md:pt-6">
                     <Title className="text-center md:hidden">
-                        {t("title")}
+                        {t("title-mobile")}
                     </Title>
-                    <p className="text-center text-[#5A5C57] text-base sm:text-lg md:text-[28px] md:leading-10 lg:w-full md:relative md:top-4">
+                    <p className="text-center text-[#5A5C57] text-base sm:text-lg md:text-[28px] md:leading-10 md:relative md:top-4 md:min-w-[700px] md:ml-[-20px]">
                         <BBCodeRenderer text={t("description")} />
                     </p>
                     <Image
@@ -56,7 +56,7 @@ export function AboutSection() {
                 {/* Maskots */}
                 <Image
                     {...LogoCoin}
-                    className="absolute w-[200px] -top-[190px] right-0 sm:right-10 scale-x-[-1] md:scale-x-[1] md:-left-0 lg:-left-[80px] md:w-[230px]"
+                    className="absolute w-[200px] -top-[190px] right-0 sm:right-10 scale-x-[-1] md:scale-x-[1] md:-top-[110px] md:w-[230px] lg:w-[270px] md:-left-[115px] lg:-top-[125px]"
                     alt="LogoCoin"
                     quality={100}
                 />

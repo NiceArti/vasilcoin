@@ -25,7 +25,7 @@ export function Header({ className }: { className?: string }) {
             {/* Dummy object. Thanks to designers */}
             <div className="hidden sm:block w-[100px] h-full" />
             
-            <div className="hidden sm:inline-flex gap-6">
+            <div className="hidden sm:inline-flex gap-16">
                 <Button
                     onClick={() => scrollToId('about')}
                     className="md:text-[22px] text-lg font-semibold transition-all duration-200 hover:font-black p-0 text-black bg-inherit shadow-none hover:bg-inherit"

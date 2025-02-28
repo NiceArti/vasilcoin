@@ -11,7 +11,8 @@
 		"copy": "Копировать"
 	},
 	"AboutSection": {
-		"title": "О $VASIL",
+		"title-pc": "О VASILCOIN",
+		"title-mobile": "О $VASIL",
 		"description": "Это не просто мем-коин в [b class='text-black']блокчейне TON[/b], а символ радости, доброты и стиля. Он создан, чтобы вдохновлять, объединять людей и делать мир ярче и счастливее."
 	},
 	"ValuesSection": {
@@ -133,6 +134,6 @@
 	"FooterSection": {
 		"description": "Присоединяйтесь к движению #VASILCOIN и помогите миру стать ярче, добрее и стильнее!",
 		"copyright": "Все права защищены.",
-		"linktree": "Вместе за улыбку с #VASILCOIN!"
+		"linktree": "Вместе за улыбку с VASILCOIN!"
 	}
 }

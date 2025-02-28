@@ -27,15 +27,25 @@ export function HeroSection() {
             className="border-b-0 sm:border-b-0"
             classNameInner="flex flex-col gap-3 min-h-[calc(100vh-108px)] md:min-h-0"
         >
-            <Header className="mt-8 mb-6 max-w-[1000px] mx-auto" />
+            <Header className="mt-8 mb-6 max-w-[936px] mx-auto" />
             
-            <Image className="hidden animate-ping-pong md:block" {...CloudGroup} alt="Funny clouds" quality={100} />
+            <Image
+                className="hidden animate-ping-pong md:block"
+                {...CloudGroup}
+                alt="Funny clouds"
+                quality={100}
+            />
 
-            <div className="inline-flex gap-3 items-center justify-center mt-3 md:justify-start">
-                <Image {...VasilcoinTokenAsset} className="aspect-square w-[50px] md:w-[80px]" alt="VASILCOIN" quality={100} />
-                <Image {...VasilcoinText} className="h-[60px] w-[288px] md:mx-0 md:w-auto md:h-auto max-h-28 max-w-[520px]" alt="VASILCOIN" quality={100} />
+            <div className="inline-flex gap-3 items-center justify-center mt-3 md:justify-start md:gap-8">
+                <Image {...VasilcoinTokenAsset} className="aspect-square w-[50px] md:w-[80px] xl:w-[100px]" alt="VASILCOIN" quality={100} />
+                <Image
+                    {...VasilcoinText}
+                    className="h-[45px] w-[260px] md:mx-0 md:w-[554px] md:h-auto max-h-28 max-w-[520px]"
+                    alt="VASILCOIN"
+                    quality={100}
+                />
             </div>
-            <div className="flex flex-col justify-center font-semibold mt-4 md:gap-4 md:justify-start">
+            <div className="flex flex-col justify-center font-semibold mt-4 md:gap-4 md:justify-start md:mt-12">
                 <p className="mx-auto text-lg md:mx-0 md:text-3xl md:leading-[52px] md:max-w-[700px] lg:text-[36px]">
                     <BBCodeRenderer text={t('description')} />
                 </p>
@@ -43,12 +53,12 @@ export function HeroSection() {
 
             <Button
                 variant={'outline'}
-                className="absolute bottom-0 mx-auto w-[90%] py-7 text-[22px] md:static md:mt-12 md:mx-0 md:w-max md:py-8 md:px-10 lg:py-10 lg:text-[28px]"
+                className="absolute bottom-0 mx-auto w-[90%] py-7 text-[22px] md:static md:mt-12 md:mx-0 md:w-max md:py-8 md:px-10 lg:py-9 lg:text-[28px]"
             >
                 {t('join-community')}
             </Button>
 
-            <div className="w-full max-w-[775px] mt-12 justify-between items-center bg-white rounded-full border-2 border-black pl-8 py-3 pr-3 h-20 shadow-[3px_3px_0px_black] hidden md:inline-flex">
+            <div className="w-full max-w-[715px] mt-12 justify-between items-center bg-white rounded-full border-2 border-black pl-8 py-3 pr-3 h-20 shadow-[3px_3px_0px_black] hidden md:inline-flex mb-9">
                 <span className="text-[18px] font-semibold md:max-w-[521px] truncate">
                     {address}
                 </span>
@@ -75,14 +85,16 @@ function ImageGroup() {
                 alt="RedCar.png"
             />
             <Image
-                className="absolute animate-slide-in-right min-w-[500px] max-w-[500px] -right-[100px] -bottom-10 md:bottom-0 md:min-w-[1036px] md:max-w-[1036px] md:-right-[500px] xl:-right-[300px]"
-                {...VasilencoAsset}
-                alt="Vasilenco.png"
+                className="saturate-[1.1] -hue-rotate-[5deg] absolute -right-[100px] bottom-[120px] min-w-[500px] max-w-[500px] md:min-w-[800px] md:max-w-[800px] md:bottom-[300px] md:-right-[350px] xl:-right-[250px] xl:min-w-[900px] xl:max-w-[900px]"
+                {...TonCoinGroup}
+                quality={100}
+                alt="TonCoinGroup.png"
             />
             <Image
-                className="saturate-150 animate-slide-in-right -hue-rotate-[5deg] absolute -right-[100px] bottom-[120px] min-w-[500px] max-w-[500px] md:min-w-[800px] md:max-w-[800px] md:bottom-[350px] md:-right-[350px] xl:-right-[150px]"
-                {...TonCoinGroup}
-                alt="TonCoinGroup.png"
+                className="absolute min-w-[500px] max-w-[500px] -right-[100px] -bottom-10 md:bottom-0 md:min-w-[1000px] md:max-w-[1036px] md:-right-[500px] xl:-right-[300px]"
+                {...VasilencoAsset}
+                quality={100}
+                alt="Vasilenco.png"
             />
         </div>
     );
