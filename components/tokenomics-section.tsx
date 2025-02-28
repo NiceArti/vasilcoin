@@ -247,7 +247,7 @@ const StylizedDonutChart = () => {
                                 backgroundColor: segment.color,
                             }}
                         />
-                        <span className="text-base whitespace-nowrap md:text-[20px] xl:text-[28px]">
+                        <span className="text-lg whitespace-nowrap md:text-[20px] xl:text-[28px]">
                             {segment.description} ({segment.label}): {segment.value}%
                         </span>
                     </div>
