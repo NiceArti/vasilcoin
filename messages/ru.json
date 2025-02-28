@@ -90,7 +90,8 @@
 		}
 	},
 	"PartnersSection": {
-		"title": "Партнеры, которые[br]появятся для VASILCOIN",
+		"title-pc": "Партнеры, которые[br]появятся для VASILCOIN",
+		"title-mobile": "Партнёры[br]VASILCOIN",
 		"description": "Ваше доверие к VASILCOIN вдохновляет на создание партнёрств, которые принесут добро, стиль и радость",
 		"data": {
 			"0": {
