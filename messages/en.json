@@ -13,7 +13,7 @@
 	"AboutSection": {
 		"title-pc": "About VASILCOIN",
 		"title-mobile": "About $VASIL",
-		"description": "[b class='text-black']VASILCOIN[/b] is more than just a [b class='text-black']TON blockchain[/b] meme coin: it’s a symbol of joy, kindness, and style. Created to inspire, unite people, and make the world brighter and much happier. Join us to became a happy society!"
+		"description": "VASILCOIN is more than just a [b class='text-black']TON blockchain[/b] meme coin: it’s a symbol of joy, kindness, and style. Created to inspire, unite people, and make the world brighter and happier."
 	},
 	"ValuesSection": {
 		"title": "The Values of[br]VASILCOIN",
@@ -61,7 +61,8 @@
 		}
 	},
 	"TokenomicsSection": {
-		"title": "How Smiles and Kindness[br]are distributed",
+		"title-pc": "How Smiles and Kindness[br]are distributed",
+		"title-mobile": "How Kindness is[br]distributed",
 		"data": {
 			"0": {
 				"label": "Liquidity",
@@ -135,6 +136,6 @@
 	"FooterSection": {
 		"description": "Join the #VASILCOIN movement and help make the world brighter, kinder, and more stylish!",
 		"copyright": "All rights reserved.",
-		"linktree": "Together for smiles with VASILCOIN!"
+		"linktree": "Together for smiles with $VASIL"
 	}
 }

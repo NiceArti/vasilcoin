@@ -19,11 +19,11 @@ export default function Home() {
 		<div className="xl:overflow-x-clip">
 			<HeroSection />
 			<Marquee
-				className="w-full h-full mt-10 md:mt-16 pointer-events-none bg-[#FFB5C0] md:py-8 py-4 border-y-4 border-black"
+				className="w-full h-full mt-10 md:mt-16 pointer-events-none bg-[#FFB5C0] md:py-8 py-3 border-y-2 md:border-y-4 border-black"
 				autoFill
 				pauseOnClick
 			>
-				<div className="mr-4 font-bold text-xl md:text-[52px]">$ VASILCOIN</div>
+				<div className="mr-4 font-bold text-xl md:text-[52px] md:py-4">$ VASILCOIN</div>
 			</Marquee>
 
 			<AboutSection />

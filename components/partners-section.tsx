@@ -34,7 +34,7 @@ export function PartnersSection() {
                 <BBCodeRenderer className="md:hidden" text={t('title-mobile')} />
             </Title>
 
-            <p className="relative text-base px-4 mx-auto mt-[20px] mb-[70px] md:text-center md:max-w-[700px] md:text-[22px] md:leading-9">
+            <p className="relative text-lg leading-tight px-4 mx-auto mt-0 mb-[70px] md:text-center md:max-w-[700px] md:text-[22px] md:leading-9">
                 {t('description')}
             </p>
 
@@ -42,18 +42,18 @@ export function PartnersSection() {
                 <Image
                     {...Scarf}
                     alt="Scarf"
-                    className="absolute w-[130px] left-[20px] animate-levitate"
+                    className="absolute w-[140px] left-[20px] animate-levitate"
                     />
                 <Image
                     {...BagAsset}
                     alt="Bag"
-                    className="absolute w-[120px] right-[20px] animate-levitate delay-500"
+                    className="absolute w-[130px] right-[20px] animate-levitate delay-500"
                 />
             </div>
 
             {/* Mobile cards */}
             <Carousel className="mt-[20px] select-none md:hidden">
-                <CarouselContent className="min-w-[300px] max-w-[320px] w-[60%] mx-auto mb-1">
+                <CarouselContent className="min-w-[300px] max-w-[320px] w-[60%] ml-6 mb-1">
                     {[...Array(3)].map((_, i) => (
                         <CarouselItem key={i} className="flex flex-col gap-5 pointer-events-none">
                             <Card
@@ -123,7 +123,7 @@ function Card({
             <h1 className="font-bold text-black text-[20px] xl:text-[28px]">
                 {title}
             </h1>
-            <p className={cn("text-[#5A5C57] text-[16px] xl:text-[22px] text-center xl:px-4")}>
+            <p className={cn("text-[#5A5C57] text-[17px] leading-tight xl:text-[22px] text-center xl:px-4")}>
                 {description}
             </p>
         </div>

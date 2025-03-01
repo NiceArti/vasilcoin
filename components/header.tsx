@@ -8,6 +8,7 @@ import { CopyButton } from "./copy-button";
 import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "./ui/button";
+import { StyledLink } from "./ui/styled-elements";
 
 
 export function Header({ className }: { className?: string }) {
@@ -15,13 +16,20 @@ export function Header({ className }: { className?: string }) {
 
     return (
         <div
-            className={cn("inline-flex justify-between items-center w-full h-[66px] px-3 py-2 rounded-full bg-white sm:py-3 sm:h-[88px]", className)}
+            className={cn("inline-flex justify-between items-center w-full h-[66px] px-2 py-2 rounded-full bg-white sm:py-3 sm:h-[88px]", className)}
         >
-            <CopyButton
+            <StyledLink
+                target="_blank"
+                href="https://tonviewer.com/EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf"
+                className="max-w-40 h-full text-[20px] shadow-[2px_2px_0px_black] px-8 sm:hidden"
+            >
+                {t('contract')}
+            </StyledLink>
+            {/* <CopyButton
                 text={t('contract')}
                 copyText="EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf"
-                className="max-w-40 h-full sm:hidden"
-            />
+                className="max-w-40 h-full shadow-[2px_2px_0px_black] sm:hidden"
+            /> */}
             {/* Dummy object. Thanks to designers */}
             <div className="hidden sm:block w-[100px] h-full" />
             
@@ -81,19 +89,19 @@ function LanguageToggle() {
     return (
         <div
             onClick={toggleLanguage}
-            className="relative inline-flex justify-between items-center w-[108px] h-full rounded-full cursor-pointer select-none border border-black shadow-[3px_3px_0px_black] bg-[#FBAC01] text-black font-bold px-4 text-[17px] sm:text-[22px] sm:px-4 sm:w-[120px]"
+            className="relative inline-flex justify-between items-center w-[108px] h-full rounded-full cursor-pointer select-none border border-black bg-[#FBAC01] text-black font-bold px-4 text-[17px] sm:text-[22px] sm:px-4 sm:w-[120px]"
         >
             {/* Текстовые метки */}
-            <span className="z-10">
+            <span className="relative right-[1px] z-10 md:left-[2px]">
                 EN
             </span>
-            <span className="z-10">
+            <span className="relative left-[1px] z-10 md:right-[3px]">
                 РУ
             </span>
 
             {/* Анимированный кружок */}
             <motion.div
-                className="absolute top-1/2 -translate-y-1/2 bg-[#FFF] rounded-full aspect-square h-[calc(100%-12px)] border border-black shadow-[2px_2px_0px_black]"
+                className="absolute top-1/2 -translate-y-1/2 bg-[#FFF] rounded-full aspect-square h-[calc(100%-12px)] border border-black shadow-[1px_1px_0px_black]"
                 initial={{ left: language === "en" ? leftPos : rightPos }}
                 animate={{ left: language === "en" ? leftPos : rightPos }}
                 transition={{ type: "spring", stiffness: 400, damping: 20 }}

@@ -23,7 +23,8 @@ export function TokenomicsSection() {
                 imageUrl={'/brand/vasilcoin-token-white.png'}
             />
             <Title className="relative text-center">
-                <BBCodeRenderer text={t('title')} />
+                <BBCodeRenderer className="hidden md:block" text={t('title-pc')} />
+                <BBCodeRenderer className="md:hidden" text={t('title-mobile')} />
             </Title>
 
             <StylizedDonutChart />
@@ -157,15 +158,15 @@ const StylizedDonutChart = () => {
     });
 
     return (
-        <div className="relative flex flex-col items-center justify-center mb-8 md:mb-0 md:flex-row md:justify-around">
-            <div className="relative">
+        <div className="relative flex flex-col items-center justify-center mb-3 md:mb-0 md:flex-row md:justify-around">
+            <div className="relative -top-[26px] md:top-0">
                 <Image
                     {...LogoCoin}
                     alt="Logo Coin"
                     className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[100px] md:w-[140px]"
                 />
                 <svg
-                    className="size-[350px] md:size-[500px] xl:size-[600px]"
+                    className="size-[380px] md:size-[500px] xl:size-[600px]"
                     viewBox="0 0 300 300"
                 >
                     {/* Тень для сегментов */}
@@ -238,7 +239,7 @@ const StylizedDonutChart = () => {
             )}
 
             {/* Легенда */}
-            <div className="relative -top-6 flex flex-col justify-center gap-[10px] mx-auto md:gap-8">
+            <div className="relative -top-[40px] flex flex-col justify-center gap-[10px] mx-auto md:gap-8 md:top-0">
                 {segments.map((segment) => (
                     <div key={segment.id} className="flex items-center md:gap-3">
                         <div
@@ -247,7 +248,7 @@ const StylizedDonutChart = () => {
                                 backgroundColor: segment.color,
                             }}
                         />
-                        <span className="text-lg whitespace-nowrap md:text-[20px] xl:text-[28px]">
+                        <span className="text-lg font-semibold whitespace-nowrap md:text-[20px] xl:text-[28px]">
                             {segment.description} ({segment.label}): {segment.value}%
                         </span>
                     </div>

@@ -16,6 +16,7 @@ import RedCarAsset from '@/public/red-car.png';
 import { BBCodeRenderer } from "@/components/ui/code-renderer";
 import { Section } from "./ui/section";
 import { Header } from "./header";
+import { StyledLink } from "./ui/styled-elements";
 
 
 export function HeroSection() {
@@ -25,7 +26,7 @@ export function HeroSection() {
     return (
         <Section
             className="border-b-0 sm:border-b-0"
-            classNameInner="flex flex-col gap-3 min-h-[calc(100vh-108px)] md:min-h-0"
+            classNameInner="flex flex-col gap-3 min-h-[625px] md:min-h-0"
         >
             <Header className="mt-8 mb-6 max-w-[936px] mx-auto" />
             
@@ -46,17 +47,18 @@ export function HeroSection() {
                 />
             </div>
             <div className="flex flex-col justify-center font-semibold mt-4 md:gap-4 md:justify-start md:mt-12">
-                <p className="mx-auto text-lg md:mx-0 md:text-3xl md:leading-[52px] md:max-w-[700px] lg:text-[36px]">
+                <p className="mx-auto text-xl md:mx-0 md:text-3xl md:leading-[52px] md:max-w-[700px] lg:text-[36px]">
                     <BBCodeRenderer text={t('description')} />
                 </p>
             </div>
 
-            <Button
-                variant={'outline'}
-                className="absolute bottom-0 mx-auto w-[90%] py-7 text-[22px] md:static md:mt-12 md:mx-0 md:w-max md:py-8 md:px-10 lg:py-9 lg:text-[28px]"
+            <StyledLink
+                target="_blank"
+                href="https://t.me/vasilcoin"
+                className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[54px] px-7 text-xl md:-translate-x-0 md:static md:mt-12 md:w-max md:py-8 md:px-10 lg:py-9 lg:text-[28px]"
             >
                 {t('join-community')}
-            </Button>
+            </StyledLink>
 
             <div className="w-full max-w-[715px] mt-12 justify-between items-center bg-white rounded-full border-2 border-black pl-8 py-3 pr-3 h-20 shadow-[3px_3px_0px_black] hidden md:inline-flex mb-9">
                 <span className="text-[18px] font-semibold md:max-w-[521px] truncate">
@@ -80,15 +82,15 @@ function ImageGroup() {
                 alt="Vortex.png"
             />
             <Image
-                className="absolute animate-slide-in-left bottom-[100px] left-[-100px] -rotate-[20deg] scale-x-[-1] min-w-[330px] max-w-[330px] md:hidden"
-                {...RedCarAsset}
-                alt="RedCar.png"
-            />
-            <Image
-                className="saturate-[1.1] -hue-rotate-[5deg] absolute -right-[120px] bottom-[80px] min-w-[550px] max-w-[500px] md:min-w-[800px] md:max-w-[800px] md:bottom-[300px] md:-right-[350px] xl:-right-[250px] xl:min-w-[900px] xl:max-w-[900px]"
+                className="saturate-[1.1] -hue-rotate-[5deg] absolute -right-0 bottom-[140px] w-full min-w-[390px] max-w-[390px] md:min-w-[800px] md:max-w-[800px] md:bottom-[300px] md:-right-[350px] xl:-right-[250px] xl:min-w-[900px] xl:max-w-[900px]"
                 {...TonCoinGroup}
                 quality={100}
                 alt="TonCoinGroup.png"
+            />
+            <Image
+                className="absolute animate-slide-in-left bottom-[60px] left-[-90px] -rotate-[30deg] scale-x-[-1] min-w-[230px] max-w-[230px] md:hidden"
+                {...RedCarAsset}
+                alt="RedCar.png"
             />
             <Image
                 className="absolute min-w-[500px] max-w-[500px] -right-[100px] -bottom-10 md:bottom-0 md:min-w-[1000px] md:max-w-[1036px] md:-right-[500px] xl:-right-[300px]"

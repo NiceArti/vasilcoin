@@ -62,7 +62,7 @@ function Card({
             />
 
             <h1 className="font-bold text-[20px] text-center mt-[18px] md:text-[28px]">{title}</h1>
-            <p className="text-center mt-3 text-[#5A5C57] text-lg font-normal md:text-[22px]">{description}</p>
+            <p className="text-center mt-3 text-[#5A5C57] text-lg font-normal leading-tight max-w-[250px] md:max-w-full md:text-[22px]">{description}</p>
         </div>
     );
 }

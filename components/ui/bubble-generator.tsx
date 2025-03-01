@@ -119,7 +119,7 @@ const BubbleBackground: React.FC<BubbleBackgroundProps> = ({
                                 height={bubble.size}
                                 quality={100}
                                 alt="Bubble Image Generated"
-                                className="opacity-25"
+                                className="opacity-15 md:opacity-25"
                                 style={{
                                     width: "100%",
                                     height: "100%",

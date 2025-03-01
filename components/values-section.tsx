@@ -114,13 +114,13 @@ function Card({
         <div className={cn("relative inline-flex items-center justify-center text-base gap-3 p-8 max-w-[435px] mx-auto md:mr-0", className)}>
             <Image
                 {...logoCloud}
-                className={cn("absolute left-1/2 -translate-x-1/2 w-full min-w-[260px] max-w-[410px] md:min-w-[600px] md:max-w-[600px] md:left-[140px]", classNameCloud)}
+                className={cn("absolute left-1/2 -translate-x-1/2 w-full min-w-[350px] max-w-[410px] md:min-w-[600px] md:max-w-[600px] md:left-[140px]", classNameCloud)}
                 alt="Cloud"
             />
 
             <Image
                 {...logo}
-                className="relative w-[50px] ml-4 md:ml-0 md:w-[82px]"
+                className="relative w-[40px] md:w-[82px]"
                 alt="Card Logo"
             />
 

@@ -21,7 +21,7 @@ import { cn } from "@/lib/utils";
 
 export function ListingSection() {
     const t = useTranslations('ListingSection');
-    const finishTime = new Date('2025-03-22T00:00:00Z');
+    const finishTime = new Date('2025-04-01T00:00:00Z');
     const [isFast, setIsFast] = useState(false);
 
     useEffect(() => {
@@ -75,7 +75,7 @@ export function ListingSection() {
     return (
         <Section
             className="bg-[#FFC0CB] overflow-y-clip"
-            classNameInner="py-14 md:pb-28"
+            classNameInner="py-12 md:pb-28"
         >
             <Image
                 {...BgCloud}
@@ -105,7 +105,7 @@ export function ListingSection() {
                     {...Watches}
                     quality={100}
                     alt="Watches"
-                    className={cn("absolute w-[180px] -right-[40px] -top-[50px] md:w-[280px] md:top-[100px] md:-right-[140px]", isFast ? "animate-shake-fast" : "animate-shake-slow")}
+                    className={cn("absolute w-[160px] -right-[40px] -top-[10px] md:w-[280px] md:top-[100px] md:-right-[140px]", isFast ? "animate-shake-fast" : "animate-shake-slow")}
                 />
             </div>
 
@@ -129,8 +129,8 @@ export function ListingSection() {
                     <span className="md:hidden">#VASILCOIN</span>
                 </p>
 
-                <StyledLink className="mx-auto mt-8 px-8 text-xl md:text-[32px] md:py-6 md:mt-0 md:w-[280px]">
-                    <LuMousePointerClick className="scale-x-[-1] text-[23px] md:text-[36px]" />
+                <StyledLink target="_blank" href="https://x.com/vasilcoin" className="mx-auto px-8 text-xl md:text-[32px] md:py-6 md:w-[280px]">
+                    <LuMousePointerClick className="scale-x-[-1] text-[26px] md:text-[36px]" />
                     {t('join')}
                 </StyledLink>
             </div>
@@ -144,7 +144,7 @@ const Completionist = () => <span>You are good to go!</span>;
 function TimerUnitStyled({ unit, unitName }: { unit: number, unitName: string }) {
     return (
         <div className="flex flex-col items-center gap-2">
-            <div className="relative size-[100px] md:size-[158px]">
+            <div className="relative size-[110px] md:size-[158px]">
                 <Image
                     {...UnitCloud}
                     alt="Bg Cloud"

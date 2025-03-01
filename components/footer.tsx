@@ -22,11 +22,11 @@ export function Footer() {
             className="border-none bg-dots-tiled-2 bg-repeat"
             classNameInner="flex flex-col gap-4 py-10 md:py-24 md:gap-10"
         >
-            <div className="flex flex-col justify-center items-center w-full gap-3 md:flex-row md:gap-8">
+            <div className="flex flex-col justify-center items-center w-full gap-4 md:flex-row md:gap-8">
                 <Image
                     quality={100}
                     {...LogoCoin}
-                    className="max-w-16 md:max-w-[100px] md:mx-0 md:w-[80px] xl:w-[100px]"
+                    className="max-w-16 min-w-[80px] md:max-w-[100px] md:mx-0 md:w-[80px] xl:w-[100px]"
                     alt="Vasilcoin Logo"
                 />
                 <Image
@@ -37,17 +37,17 @@ export function Footer() {
                 />
             </div>
 
-            <p className="font-semibold text-lg text-center w-[80%] max-w-[650px] mx-auto md:text-[28px] md:leading-10">
+            <p className="font-semibold text-lg leading-tight text-center max-w-[650px] mx-auto mt-4 md:text-[28px] md:leading-10">
                 {t('description')}
             </p>
             
-            <StyledLink className="mx-auto mt-8 px-0 text-base my-4 py-4 w-full max-w-[600px] md:w-max md:text-[18px] md:px-12 lg:text-[22px]">
+            <StyledLink target="_blank" href="https://discord.gg/NtAybafZrx" className="mx-auto mt-8 px-0 text-[18px] my-4 h-[54px] w-full max-w-[600px] md:h-[74px] md:w-max md:text-[22px] md:px-12 lg:h-[84px] lg:text-[28px]">
                 <LuMousePointerClick className="scale-x-[-1] text-[23px] md:text-[30px] hidden md:block lg:text-[40px]" />
                 {t('linktree')}
             </StyledLink>
 
             <div className="inline-flex justify-between w-full max-w-[1100px] mx-auto mt-5 items-center">
-                <p className="text-foreground md:text-[18px] lg:text-[22px]">
+                <p className="text-foreground text-sm md:text-[18px] lg:text-[22px]">
                     Copyright &copy; <time>2025</time> $VASIL.{' '}
                     {t('copyright')}
                 </p>

@@ -28,12 +28,12 @@ export function AboutSection() {
                 {t("title-pc")}
             </Title>
 
-            <div className="relative mt-[180px] mx-auto max-w-[960px] w-full flex flex-col gap-8 md:top-[20%]">
+            <div className="relative mt-[140px] mx-auto max-w-[960px] w-full flex flex-col gap-8 md:top-[20%]">
                 <div className="flex flex-col gap-4 relative z-10 max-w-[700px] mx-auto pt-3 px-6 sm:w-[80%] md:gap-2 md:mb-10 md:pt-6">
                     <Title className="text-center md:hidden">
                         {t("title-mobile")}
                     </Title>
-                    <p className="text-center text-[#5A5C57] text-base sm:text-lg md:text-[28px] md:leading-10 md:relative md:top-4 md:min-w-[700px] md:ml-[-20px]">
+                    <p className="text-center text-[#5A5C57] max-w-[260px] mx-auto text-lg leading-[1.3] md:text-[28px] md:leading-10 md:relative md:top-4 md:min-w-[700px] md:ml-[-20px]">
                         <BBCodeRenderer text={t("description")} />
                     </p>
                     <Image
@@ -43,7 +43,7 @@ export function AboutSection() {
                     />
                     <Image
                         {...CounGroupSm}
-                        className=" w-full mx-auto md:hidden"
+                        className=" w-[90%] mx-auto md:hidden"
                         alt="CoinGroup Small"
                     />
                 </div>
@@ -63,13 +63,13 @@ export function AboutSection() {
                 {/* Maskots */}
                 <Image
                     {...LogoCoin}
-                    className="absolute w-[200px] -top-[190px] right-0 sm:right-10 scale-x-[-1] md:scale-x-[1] md:-top-[110px] md:w-[230px] lg:w-[270px] md:-left-[115px] lg:-top-[125px]"
+                    className="absolute w-[160px] -top-[150px] right-5 sm:right-10 scale-x-[-1] md:scale-x-[1] md:-top-[110px] md:w-[230px] lg:w-[270px] md:-left-[115px] lg:-top-[125px]"
                     alt="LogoCoin"
                     quality={100}
                 />
                 <Image
                     {...LogoCoin1}
-                    className="absolute w-[140px] xs:left-10 -top-[140px] scale-x-[-1] md:hidden"
+                    className="absolute w-[110px] -top-[100px] scale-x-[-1] left-5 xs:left-10 md:hidden"
                     alt="LogoCoin1"
                     quality={100}
                 />
