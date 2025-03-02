@@ -16,7 +16,7 @@ export function Header({ className }: { className?: string }) {
 
     return (
         <div
-            className={cn("inline-flex justify-between items-center w-full h-[66px] px-2 py-2 rounded-full bg-white sm:py-3 sm:h-[88px]", className)}
+            className={cn("inline-flex justify-between items-center w-full h-[66px] px-2 py-2 rounded-full bg-white sm:py-3 sm:px-3 sm:h-[88px]", className)}
         >
             <StyledLink
                 target="_blank"
