@@ -23,8 +23,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/vasilcoin-og.png", // Путь к OG изображению
-        width: 1200,
-        height: 630,
+        width: 960,
+        height: 540,
         alt: "Vasilcoin - стильный мемтокен",
       }
     ],

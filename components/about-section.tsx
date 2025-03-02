@@ -33,7 +33,7 @@ export function AboutSection() {
                     <Title className="text-center md:hidden">
                         {t("title-mobile")}
                     </Title>
-                    <p className="text-center text-[#5A5C57] max-w-[260px] mx-auto text-lg leading-[1.3] md:text-[28px] md:leading-10 md:relative md:top-4 md:min-w-[700px] md:ml-[-20px]">
+                    <p className="text-center text-[#5A5C57] min-w-[260px] max-w-[90%] mx-auto text-lg leading-[1.3] md:text-[28px] md:leading-10 md:relative md:top-4 md:min-w-[700px] md:ml-[-20px]">
                         <BBCodeRenderer text={t("description")} />
                     </p>
                     <Image
