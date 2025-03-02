@@ -3,9 +3,6 @@ import type { NextConfig } from "next";
 const withNextIntl = createNextIntlPlugin('./i18n/request.ts');
 
 const nextConfig: NextConfig = {
-  images: {
-    domains: ['assets.aceternity.com'],
-  },
 };
 
 export default withNextIntl(nextConfig);
