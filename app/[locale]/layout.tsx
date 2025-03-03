@@ -2,6 +2,7 @@ import { Nunito } from "next/font/google";
 import { getMessages } from "next-intl/server";
 import {NextIntlClientProvider} from 'next-intl';
 import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import "../globals.css";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
@@ -36,6 +37,7 @@ export default async function LocaleLayout({
           {children}
         </NextIntlClientProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
