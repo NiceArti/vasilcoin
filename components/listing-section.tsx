@@ -3,26 +3,31 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Countdown from 'react-countdown';
+import { useTranslations } from "next-intl";
 import { LuMousePointerClick } from "react-icons/lu";
+
+import { cn } from "@/lib/utils";
+import { FAIR_LAUNCH_URL, TELEGRAM_GROUP_URL } from "@/lib/constants";
+import { BBCodeRenderer } from "./ui/code-renderer";
+import { Title } from "./ui/title";
+import { Section } from "./ui/section";
+import { StyledLink } from "./ui/styled-elements";
+import AnimatedElement from "./ui/animation-observer";
 
 import UnitCloud from '@/public/listing-cloud.png';
 import Rocket from '@/public/rocket.png';
 import Dog from '@/public/dog.png';
 import Watches from '@/public/watches.png';
 import BgCloud from '@/public/background/cloud.png';
-import { useTranslations } from "next-intl";
-import { BBCodeRenderer } from "./ui/code-renderer";
-import { Title } from "./ui/title";
-import { Section } from "./ui/section";
-import { StyledLink } from "./ui/styled-elements";
-import AnimatedElement from "./ui/animation-observer";
-import { cn } from "@/lib/utils";
 
 
 export function ListingSection() {
     const t = useTranslations('ListingSection');
-    const finishTime = new Date('2025-04-01T00:00:00Z');
+    const now = new Date();
+    const finishTime = new Date('2025-03-30T00:00:00Z');
     const [isFast, setIsFast] = useState(false);
+    const [link, setLink] = useState<string>(TELEGRAM_GROUP_URL);
+    const [isFinished, setIsFinished] = useState<boolean>(now >= finishTime);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -47,7 +52,26 @@ export function ListingSection() {
         completed: boolean,
     }) => {
         if (completed) {
-            return <Completionist />;
+            return (
+                <>
+                    <div className="inline-flex justify-center w-full gap-10 md:hidden">
+                        <div className="flex flex-col gap-8 ">
+                            <TimerUnitStyled unit={0} unitName={t('time-units.days')} />
+                            <TimerUnitStyled unit={0} unitName={t('time-units.minutes')} />
+                        </div>
+                        <div className="flex flex-col gap-8">
+                            <TimerUnitStyled unit={0} unitName={t('time-units.hours')} />
+                            <TimerUnitStyled unit={0} unitName={t('time-units.seconds')} />
+                        </div>
+                    </div>
+                    <div className="w-full gap-28 justify-center hidden md:inline-flex">
+                        <TimerUnitStyled unit={0} unitName={t('time-units.days')} />
+                        <TimerUnitStyled unit={0} unitName={t('time-units.hours')} />
+                        <TimerUnitStyled unit={0} unitName={t('time-units.minutes')} />
+                        <TimerUnitStyled unit={0} unitName={t('time-units.seconds')} />
+                    </div>
+                </>
+            );
         } else {
             return (
                 <>
@@ -63,14 +87,23 @@ export function ListingSection() {
                     </div>
                     <div className="w-full gap-28 justify-center hidden md:inline-flex">
                         <TimerUnitStyled unit={days} unitName={t('time-units.days')} />
-                        <TimerUnitStyled unit={minutes} unitName={t('time-units.hours')} />
-                        <TimerUnitStyled unit={hours} unitName={t('time-units.minutes')} />
+                        <TimerUnitStyled unit={hours} unitName={t('time-units.hours')} />
+                        <TimerUnitStyled unit={minutes} unitName={t('time-units.minutes')} />
                         <TimerUnitStyled unit={seconds} unitName={t('time-units.seconds')} />
                     </div>
                 </>
             );
         }
     };
+
+
+    useEffect(() => {
+        if(!isFinished) {
+            return;
+        }
+
+        setLink(FAIR_LAUNCH_URL);
+    }, [isFinished]);
 
     return (
         <Section
@@ -120,7 +153,7 @@ export function ListingSection() {
                     precision={3}
                     renderer={renderer}
                     onComplete={() => {
-                        // setIsFinished(true);
+                        setIsFinished(true);
                     }}
                 />
                 
@@ -129,16 +162,16 @@ export function ListingSection() {
                     <span className="md:hidden">#VASILCOIN</span>
                 </p>
 
-                <StyledLink target="_blank" href="https://x.com/vasilcoin" className="mx-auto px-8 text-xl md:text-[32px] md:py-6 md:w-[280px]">
+                <StyledLink target="_blank" href={link} className={cn("mx-auto px-8 text-xl md:text-[32px] md:py-6 md:w-[280px]")}>
                     <LuMousePointerClick className="scale-x-[-1] text-[26px] md:text-[36px]" />
-                    {t('join')}
+                    {t(isFinished ? 'buy-now' : 'join')}
                 </StyledLink>
             </div>
         </Section>
     );
 }
 
-const Completionist = () => <span>You are good to go!</span>;
+const Completionist = () => null;
 
 
 function TimerUnitStyled({ unit, unitName }: { unit: number, unitName: string }) {

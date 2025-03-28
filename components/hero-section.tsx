@@ -17,6 +17,7 @@ import { BBCodeRenderer } from "@/components/ui/code-renderer";
 import { Section } from "./ui/section";
 import { Header } from "./header";
 import { StyledLink } from "./ui/styled-elements";
+import { FAIR_LAUNCH_URL } from "@/lib/constants";
 
 
 export function HeroSection() {
@@ -54,10 +55,10 @@ export function HeroSection() {
 
             <StyledLink
                 target="_blank"
-                href="https://t.me/vasilcoin"
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 h-[54px] px-7 text-xl md:-translate-x-0 md:static md:mt-12 md:w-max md:py-8 md:px-10 lg:py-9 lg:text-[28px]"
+                href={FAIR_LAUNCH_URL}
+                className="uppercase absolute bottom-0 left-1/2 -translate-x-1/2 h-[54px] px-7 text-xl md:-translate-x-0 bg-[#ffb5c1] md:static md:mt-12 md:w-max md:py-8 md:px-10 lg:py-9 lg:text-[28px]"
             >
-                {t('join-community')}
+                {t('buy-vasilcoin')}
             </StyledLink>
 
             <div className="w-full max-w-[715px] mt-12 justify-between items-center bg-white rounded-full border-2 border-black pl-8 py-3 pr-3 h-20 shadow-[3px_3px_0px_black] hidden md:inline-flex mb-9">

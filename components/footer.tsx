@@ -12,6 +12,7 @@ import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Section } from "./ui/section";
 import { StyledLink } from "./ui/styled-elements";
+import { TELEGRAM_GROUP_URL } from "@/lib/constants";
 
 
 export function Footer() {
@@ -41,21 +42,21 @@ export function Footer() {
                 {t('description')}
             </p>
             
-            <StyledLink target="_blank" href="https://discord.gg/NtAybafZrx" className="mx-auto mt-8 px-0 text-[18px] my-4 h-[54px] w-full max-w-[600px] md:h-[74px] md:w-max md:text-[22px] md:px-12 lg:h-[84px] lg:text-[28px]">
+            <StyledLink target="_blank" href={TELEGRAM_GROUP_URL} className="mx-auto mt-8 px-0 text-[18px] my-4 h-[54px] w-full max-w-[600px] md:h-[74px] md:w-max md:text-[22px] md:px-12 lg:h-[84px] lg:text-[28px]">
                 <LuMousePointerClick className="scale-x-[-1] text-[23px] md:text-[30px] hidden md:block lg:text-[40px]" />
                 {t('linktree')}
             </StyledLink>
 
             <div className="inline-flex justify-between w-full max-w-[1100px] mx-auto mt-5 items-center">
-                <p className="text-foreground text-sm md:text-[18px] lg:text-[22px]">
+                <p className="text-foreground text-sm md:text-[18px] lg:text-[22px] text-center w-full">
                     Copyright &copy; <time>2025</time> $VASIL.{' '}
                     {t('copyright')}
                 </p>
-                <div className="inline-flex gap-3 md:gap-4">
+                {/* <div className="inline-flex gap-3 md:gap-4">
                     <SocialButton href="https://discord.gg/NtAybafZrx" icon={<FaDiscord className="text-2xl md:text-[36px]" />} />
                     <SocialButton href="https://t.me/vasilcoin" icon={<RiTelegram2Fill className="text-2xl md:text-[36px]"/>} />
                     <SocialButton href="https://x.com/vasilcoin" icon={<BsTwitterX className="text-xl md:text-[30px]"/>} />
-                </div>
+                </div> */}
             </div>
         </Section>
     );

@@ -7,7 +7,7 @@
 	},
 	"HeroSection": {
 		"description": "[b]$VASIL[/b] - Мем-коин, который приносит добро, стиль и улыбки!",
-		"join-community": "Вступить в сообщество",
+		"buy-vasilcoin": "$ Купить VASILCOIN $",
 		"copy": "Копировать"
 	},
 	"AboutSection": {
@@ -36,6 +36,7 @@
 		"title": "До листинга осталось:",
 		"description": "Не пропустите возможность стать частью движения #VASILCOIN!",
 		"join": "Залетай",
+		"buy-now": "Купить",
 		"time-units": {
 			"days": "Дни",
 			"hours": "Часы",
