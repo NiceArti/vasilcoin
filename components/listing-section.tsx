@@ -24,7 +24,7 @@ import BgCloud from '@/public/background/cloud.png';
 export function ListingSection() {
     const t = useTranslations('ListingSection');
     const now = new Date();
-    const finishTime = new Date('2025-03-30T00:00:00Z');
+    const finishTime = new Date('2025-03-29T21:00:00Z');
     const [isFast, setIsFast] = useState(false);
     const [link, setLink] = useState<string>(TELEGRAM_GROUP_URL);
     const [isFinished, setIsFinished] = useState<boolean>(now >= finishTime);
