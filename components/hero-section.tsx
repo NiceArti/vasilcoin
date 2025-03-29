@@ -17,11 +17,10 @@ import { BBCodeRenderer } from "@/components/ui/code-renderer";
 import { Section } from "./ui/section";
 import { Header } from "./header";
 import { StyledLink } from "./ui/styled-elements";
-import { FAIR_LAUNCH_URL } from "@/lib/constants";
+import { FAIR_LAUNCH_URL, TOKEN_ADDRESS } from "@/lib/constants";
 
 
 export function HeroSection() {
-    const address = 'EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf';
     const t = useTranslations('HeroSection');
 
     return (
@@ -63,9 +62,9 @@ export function HeroSection() {
 
             <div className="w-full max-w-[715px] mt-12 justify-between items-center bg-white rounded-full border-2 border-black pl-8 py-3 pr-3 h-20 shadow-[3px_3px_0px_black] hidden md:inline-flex mb-9">
                 <span className="text-[18px] font-semibold md:max-w-[521px] truncate">
-                    {address}
+                    {TOKEN_ADDRESS}
                 </span>
-                <CopyButton text={t('copy')} copyText={address} className="text-[22px] gap-4" />
+                <CopyButton text={t('copy')} copyText={TOKEN_ADDRESS} className="text-[22px] gap-4" />
             </div>
 
             <ImageGroup />

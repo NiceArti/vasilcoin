@@ -9,6 +9,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useRouter, usePathname } from "next/navigation";
 import { Button } from "./ui/button";
 import { StyledLink } from "./ui/styled-elements";
+import { TOKEN_ADDRESS_URL } from "@/lib/constants";
 
 
 export function Header({ className }: { className?: string }) {
@@ -20,7 +21,7 @@ export function Header({ className }: { className?: string }) {
         >
             <StyledLink
                 target="_blank"
-                href="https://tonviewer.com/EQAPAM9qo9M6gZLMxknEwvLSjCv1H-QlyKxHRxM6kgXVovlf"
+                href={TOKEN_ADDRESS_URL}
                 className="max-w-40 h-full text-[20px] shadow-[2px_2px_0px_black] px-8 sm:hidden"
             >
                 {t('contract')}
